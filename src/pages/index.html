@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <script src="/node_modules/animejs/lib/anime.min.js"></script>
+    <script defer src="/src/js/app.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"> 
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Jeff Nicholls</title>
+</head>
+<body class="bg-[#EEEAEA]">
+    <div class="opening-screen flex z-50 items-center overflow-hidden justify-center w-full h-screen absolute inset-0 bg-[#202020]">
+        <h2 class="text-white opacity-0 translate-y-[100%] open-text font-bold text-[50rem]">J</h2>
+        <h2 class="text-white opacity-0 translate-y-full open-text font-bold text-[50rem]">N</h2>
+    </div>
+    <nav>
+        <div class="w-full h-[80px] bg-[#202020]">
+            <div class="max-w-[1280px] h-full flex items-center justify-between mx-auto">
+                <div class="flex">
+                    <div class="w-20 h-20">
+                        <img class="object-contain" src="/src/images/logo-trans.png" alt="">
+                    </div>
+                    <div class="nav-bar ml-20 font-bold text-white flex gap-10 items-center">
+                        <a href="/">Overview</a>
+                        <a href="/">Projects</a>
+                        <a href="/">Skills</a>
+                    </div>
+                </div>
+                <div class="flex">
+                    <a class="flex justify-between font-bold items-center bg-white rounded-md px-3 w-52 h-[3rem]" href="/">
+                        Get in Touch
+                        <span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.92 11.62C17.8724 11.4973 17.801 11.3851 17.71 11.29L12.71 6.29C12.6168 6.19676 12.5061 6.1228 12.3842 6.07234C12.2624 6.02188 12.1319 5.99591 12 5.99591C11.7337 5.99591 11.4783 6.1017 11.29 6.29C11.1968 6.38324 11.1228 6.49393 11.0723 6.61575C11.0219 6.73758 10.9959 6.86814 10.9959 7C10.9959 7.2663 11.1017 7.5217 11.29 7.71L14.59 11H7C6.73478 11 6.48043 11.1054 6.29289 11.2929C6.10536 11.4804 6 11.7348 6 12C6 12.2652 6.10536 12.5196 6.29289 12.7071C6.48043 12.8946 6.73478 13 7 13H14.59L11.29 16.29C11.1963 16.383 11.1219 16.4936 11.0711 16.6154C11.0203 16.7373 10.9942 16.868 10.9942 17C10.9942 17.132 11.0203 17.2627 11.0711 17.3846C11.1219 17.5064 11.1963 17.617 11.29 17.71C11.383 17.8037 11.4936 17.8781 11.6154 17.9289C11.7373 17.9797 11.868 18.0058 12 18.0058C12.132 18.0058 12.2627 17.9797 12.3846 17.9289C12.5064 17.8781 12.617 17.8037 12.71 17.71L17.71 12.71C17.801 12.6149 17.8724 12.5028 17.92 12.38C18.02 12.1365 18.02 11.8635 17.92 11.62Z" fill="black"/>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="max-w-[1280px] h-[600px] grid grid-cols-2 gap-5 mx-auto">
+        <div class="col-span-1 flex flex-col justify-center">
+            <div class="p-2 rounded-full overflow-hidden  w-60 text-center uppercase text-sm font-bold border-2 border-black">
+                <div class="block-content">Personal Portfolio</div>
+            </div>
+            <div class="font-bold overflow-hidden container-block text-[5rem] mt-8">
+                <div class="block-content">Jeff Nicholls</div>
+            </div>
+            <div class="font-normal overflow-hidden container-block mt-8 w-96">
+                <div class="block-content">Freelance software engineer from the North of England, specialising in <strong>leading e-commerce platforms</strong> and over 6+ years expertise in building custom bespoke solutions</div>
+            </div>
+            <a class="flex mt-8 justify-between text-white font-bold items-center bg-[#202020] rounded-full px-5 w-52 h-[3rem]" href="/">
+                Enquire Now
+                <span>
+                    <svg class="fill-current text-white" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.92 11.62C17.8724 11.4973 17.801 11.3851 17.71 11.29L12.71 6.29C12.6168 6.19676 12.5061 6.1228 12.3842 6.07234C12.2624 6.02188 12.1319 5.99591 12 5.99591C11.7337 5.99591 11.4783 6.1017 11.29 6.29C11.1968 6.38324 11.1228 6.49393 11.0723 6.61575C11.0219 6.73758 10.9959 6.86814 10.9959 7C10.9959 7.2663 11.1017 7.5217 11.29 7.71L14.59 11H7C6.73478 11 6.48043 11.1054 6.29289 11.2929C6.10536 11.4804 6 11.7348 6 12C6 12.2652 6.10536 12.5196 6.29289 12.7071C6.48043 12.8946 6.73478 13 7 13H14.59L11.29 16.29C11.1963 16.383 11.1219 16.4936 11.0711 16.6154C11.0203 16.7373 10.9942 16.868 10.9942 17C10.9942 17.132 11.0203 17.2627 11.0711 17.3846C11.1219 17.5064 11.1963 17.617 11.29 17.71C11.383 17.8037 11.4936 17.8781 11.6154 17.9289C11.7373 17.9797 11.868 18.0058 12 18.0058C12.132 18.0058 12.2627 17.9797 12.3846 17.9289C12.5064 17.8781 12.617 17.8037 12.71 17.71L17.71 12.71C17.801 12.6149 17.8724 12.5028 17.92 12.38C18.02 12.1365 18.02 11.8635 17.92 11.62Z" fill="white"/>
+                    </svg>
+                </span>
+            </a>
+        </div>
+        <div class="col-span-1 flex container-block overflow-hidden items-center justify-center">
+            <img class="object-contain hero-content w-full" src="/src/images/hero-image.png" alt="">
+        </div>
+    </div>
+    <div class="marquee bg-[#202020]">
+        <div class="track">
+        <div class="content flex items-center gap-5 text-[#EEEAEA] h-[60px] text-[8rem] uppercase font-bold">
+            <span>Shopify</span>
+            <span>Laravel</span>
+            <span>PHP</span>
+            <span>Wordpress</span>
+            <span>Liquid</span>
+            <span>Figma</span>
+            <span>Anime JS</span>
+            <span>Javascript</span>
+        </div>
+        </div>
+    </div>
+
+    <div class="max-w-[1280px] py-12 mx-auto">
+        <div class="heading overflow-hidden container-block w-96 inline-block relative">
+            <h2 class="text-2xl block-content font-bold">View Recent Projects</h2>
+            <span class="w-40 bg-black block-content rounded-full h-1 absolute -right-10 top-1/2 -translate-y-1/2"></span>
+        </div>
+        <div class="grid mt-10 grid-cols-4 gap-5">
+            <div class="col-span-1 overflow-hidden border-2 border-black rounded-xl p-10 h-full flex flex-col justify-between">
+                <p>From agencies to freelance, I have a plethora of work to show my experience and technical ability. take a browse through some of the most recent projects I have undertaken.</p>
+                <div class="h-10 pointer-events-none w-full relative">
+                    <svg class="absolute arrow-svg w-full left-[-2.5rem] top-[-50px] bottom-1/2 translate-y-1/2" width="388" height="139" viewBox="0 0 388 139" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M339.002 65.3879L306.222 32.665C305.683 32.1222 305.043 31.6913 304.337 31.3973C303.631 31.1032 302.874 30.9518 302.11 30.9518C301.345 30.9518 300.588 31.1032 299.882 31.3973C299.176 31.6913 298.536 32.1222 297.997 32.665C296.919 33.7501 296.313 35.2181 296.313 36.7481C296.313 38.2782 296.919 39.7461 297.997 40.8313L326.666 69.7896L297.997 98.4583C296.919 99.5435 296.313 101.011 296.313 102.541C296.313 104.072 296.919 105.539 297.997 106.625C298.534 107.172 299.174 107.607 299.879 107.905C300.585 108.204 301.343 108.359 302.11 108.362C302.876 108.359 303.634 108.204 304.34 107.905C305.046 107.607 305.685 107.172 306.222 106.625L339.002 73.9017C339.59 73.3593 340.06 72.7011 340.38 71.9685C340.701 71.2358 340.867 70.4446 340.867 69.6448C340.867 68.845 340.701 68.0538 340.38 67.3211C340.06 66.5885 339.59 65.9303 339.002 65.3879V65.3879Z" fill="#BDBDBD"/>
+                        <line x1="332" y1="70" x2="-5.24537e-07" y2="70" stroke="#BDBDBD" stroke-width="12"/>
+                    </svg>
+                </div>
+                <a href="/" class="inline-block">View Work</a>
+            </div>
+            <div class="col-span-1 bg-gray-200 relative rounded-md">
+                <a target="_blank" class="w-full h-full group relative" href="https://traditionalbeams.com/">
+                    <!-- <span class="inset-0 block w-full top-0 left-0 h-full absolute z-10">
+                        hi
+                    </span> -->
+                    <img class="object-cover" src="/src/images/trad-beams.png" alt="">
+                </a>
+            </div>
+            <div class="col-span-1 bg-gray-200 rounded-md">
+                <a target="_blank" class="project-view" href="https://www.astrocart.com/">
+                    <img class="object-cover" src="/src/images/case-2.png" alt="">
+                </a>
+            </div>
+            <div class="col-span-1 bg-gray-200 rounded-md">
+                <a target="_blank" href="https://olivias.com/">
+                    <img class="object-cover" src="/src/images/case-3.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full bg-[#202020]">
+        <div class="max-w-[1280px] py-12 mx-auto">
+            <div class="heading overflow-hidden w-96 inline-block relative">
+                <h2 class="text-2xl text-white font-bold">View Skills & Tech</h2>
+                <span class="w-40 bg-white rounded-full h-1 absolute -right-10 top-1/2 -translate-y-1/2"></span>
+            </div>
+            <div class="flex items-center mt-10 justify-between gap-5">
+                <div class="col-span-1 p-4 rounded-lg bg-[#575757]">
+                    <p class="font-bold text-sm text-white"><span class="text-[#B4B4B4] mr-2 text-sm font-normal">4+ Years</span>Shopify Development</p>
+                </div>
+                <div class="col-span-1 p-4 rounded-lg bg-[#575757]">
+                    <p class="font-bold text-sm text-white"><span class="text-[#B4B4B4] mr-2 text-sm font-normal">5+ Years</span>Wordpress Development</p>
+                </div>
+                <div class="col-span-1 p-4 rounded-lg bg-[#575757]">
+                    <p class="font-bold text-sm text-white"><span class="text-[#B4B4B4] mr-2 text-sm font-normal">2+ Years</span>Bespoke Development</p>
+                </div>
+                <div class="col-span-1 p-4 rounded-lg bg-[#575757]">
+                    <p class="font-bold text-sm text-white"><span class="text-[#B4B4B4] mr-2 text-sm font-normal">4+ Years</span>Graphic Design</p>
+                </div>
+                <div class="col-span-1 p-4 rounded-lg bg-[#575757]">
+                    <p class="font-bold text-sm text-white"><span class="text-[#B4B4B4] mr-2 text-sm font-normal">26+ Years</span>Supporting the Boro</p>
+                </div>
+            </div>
+            <div class="grid mt-5 grid-cols-12 gap-5">
+                <div class="col-span-5 relative p-4 rounded-lg bg-[#575757]">
+                    <img class="absolute right-10 top-1/2 object-contain object-right w-3/4 h-3/4 -translate-y-1/2" src="/src/images/github-logo.png" alt="github-logo">
+                    <p class="text-white font-bold">Github Stats</p>
+                    <div class="mt-4 flex gap-2 flex-col">
+                        <span class="flex items-center">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.72 15.0533L13.1733 7.52001C13.0494 7.39504 12.9019 7.29584 12.7394 7.22815C12.577 7.16046 12.4027 7.12561 12.2267 7.12561C12.0506 7.12561 11.8764 7.16046 11.7139 7.22815C11.5514 7.29584 11.4039 7.39504 11.28 7.52001C11.0317 7.76982 10.8923 8.10776 10.8923 8.46001C10.8923 8.81226 11.0317 9.15019 11.28 9.40001L17.88 16.0667L11.28 22.6667C11.0317 22.9165 10.8923 23.2544 10.8923 23.6067C10.8923 23.9589 11.0317 24.2969 11.28 24.5467C11.4035 24.6727 11.5507 24.7729 11.7132 24.8415C11.8757 24.9102 12.0503 24.9459 12.2267 24.9467C12.4031 24.9459 12.5776 24.9102 12.7401 24.8415C12.9026 24.7729 13.0498 24.6727 13.1733 24.5467L20.72 17.0133C20.8553 16.8885 20.9633 16.7369 21.0372 16.5683C21.1111 16.3996 21.1492 16.2175 21.1492 16.0333C21.1492 15.8492 21.1111 15.6671 21.0372 15.4984C20.9633 15.3297 20.8553 15.1782 20.72 15.0533V15.0533Z" fill="#202020"/>
+                            </svg>
+                            <span class="text-white text-sm">296 contributions in the last year</span>
+                        </span>
+                        <span class="flex items-center">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.72 15.0533L13.1733 7.52001C13.0494 7.39504 12.9019 7.29584 12.7394 7.22815C12.577 7.16046 12.4027 7.12561 12.2267 7.12561C12.0506 7.12561 11.8764 7.16046 11.7139 7.22815C11.5514 7.29584 11.4039 7.39504 11.28 7.52001C11.0317 7.76982 10.8923 8.10776 10.8923 8.46001C10.8923 8.81226 11.0317 9.15019 11.28 9.40001L17.88 16.0667L11.28 22.6667C11.0317 22.9165 10.8923 23.2544 10.8923 23.6067C10.8923 23.9589 11.0317 24.2969 11.28 24.5467C11.4035 24.6727 11.5507 24.7729 11.7132 24.8415C11.8757 24.9102 12.0503 24.9459 12.2267 24.9467C12.4031 24.9459 12.5776 24.9102 12.7401 24.8415C12.9026 24.7729 13.0498 24.6727 13.1733 24.5467L20.72 17.0133C20.8553 16.8885 20.9633 16.7369 21.0372 16.5683C21.1111 16.3996 21.1492 16.2175 21.1492 16.0333C21.1492 15.8492 21.1111 15.6671 21.0372 15.4984C20.9633 15.3297 20.8553 15.1782 20.72 15.0533V15.0533Z" fill="#202020"/>
+                            </svg>
+                            <span class="text-white text-sm">4 Acheivements</span>
+                        </span>
+                        <span class="flex items-center">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.72 15.0533L13.1733 7.52001C13.0494 7.39504 12.9019 7.29584 12.7394 7.22815C12.577 7.16046 12.4027 7.12561 12.2267 7.12561C12.0506 7.12561 11.8764 7.16046 11.7139 7.22815C11.5514 7.29584 11.4039 7.39504 11.28 7.52001C11.0317 7.76982 10.8923 8.10776 10.8923 8.46001C10.8923 8.81226 11.0317 9.15019 11.28 9.40001L17.88 16.0667L11.28 22.6667C11.0317 22.9165 10.8923 23.2544 10.8923 23.6067C10.8923 23.9589 11.0317 24.2969 11.28 24.5467C11.4035 24.6727 11.5507 24.7729 11.7132 24.8415C11.8757 24.9102 12.0503 24.9459 12.2267 24.9467C12.4031 24.9459 12.5776 24.9102 12.7401 24.8415C12.9026 24.7729 13.0498 24.6727 13.1733 24.5467L20.72 17.0133C20.8553 16.8885 20.9633 16.7369 21.0372 16.5683C21.1111 16.3996 21.1492 16.2175 21.1492 16.0333C21.1492 15.8492 21.1111 15.6671 21.0372 15.4984C20.9633 15.3297 20.8553 15.1782 20.72 15.0533V15.0533Z" fill="#202020"/>
+                            </svg>
+                            <span class="text-white text-sm">11 Repositories</span>
+                        </span>
+                        <span class="flex items-center">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.72 15.0533L13.1733 7.52001C13.0494 7.39504 12.9019 7.29584 12.7394 7.22815C12.577 7.16046 12.4027 7.12561 12.2267 7.12561C12.0506 7.12561 11.8764 7.16046 11.7139 7.22815C11.5514 7.29584 11.4039 7.39504 11.28 7.52001C11.0317 7.76982 10.8923 8.10776 10.8923 8.46001C10.8923 8.81226 11.0317 9.15019 11.28 9.40001L17.88 16.0667L11.28 22.6667C11.0317 22.9165 10.8923 23.2544 10.8923 23.6067C10.8923 23.9589 11.0317 24.2969 11.28 24.5467C11.4035 24.6727 11.5507 24.7729 11.7132 24.8415C11.8757 24.9102 12.0503 24.9459 12.2267 24.9467C12.4031 24.9459 12.5776 24.9102 12.7401 24.8415C12.9026 24.7729 13.0498 24.6727 13.1733 24.5467L20.72 17.0133C20.8553 16.8885 20.9633 16.7369 21.0372 16.5683C21.1111 16.3996 21.1492 16.2175 21.1492 16.0333C21.1492 15.8492 21.1111 15.6671 21.0372 15.4984C20.9633 15.3297 20.8553 15.1782 20.72 15.0533V15.0533Z" fill="#202020"/>
+                            </svg>
+                            <span class="text-white text-sm">/JeffNicholls97</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-span-2 group flex relative items-center justify-center p-4 rounded-lg bg-[#575757]">
+                    <a class="absolute inset-0 flex items-center justify-center" href="/src/images/Jeffrey_Nicholls_CV.PDF" download="jeff_nicholls_cv">
+                        <svg class="fill-current transition-all group-hover:text-[#5d5d5d] text-white w-20 h-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 232V334.1l31-31c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-72 72c-9.4 9.4-24.6 9.4-33.9 0l-72-72c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l31 31V232c0-13.3 10.7-24 24-24s24 10.7 24 24z"/></svg>
+                    </a>
+                    <p class="text-white transition-all relative z-10 opacity-0 group-hover:opacity-100 text-sm">Download CV</p>
+                </div>
+                <div class="col-span-5 p-4 rounded-lg bg-[#575757]">
+                    <div class="flex items-center justify-between">
+                        <p class="text-white font-bold">Tech Stack</p>
+                        <div class="flex items-center">
+                            <span class="text-xs text-[#959595]">Newbie</span>
+                            <div class="mx-2 grid grid-cols-4 gap-1">
+                                <span class="bg-red-400 rounded-sm w-2 h-2"></span>
+                                <span class="bg-yellow-300 rounded-sm w-2 h-2"></span>
+                                <span class="bg-orange-300 rounded-sm w-2 h-2"></span>
+                                <span class="bg-green-300 rounded-sm w-2 h-2"></span>
+                            </div>
+                            <span class="text-xs text-[#959595]">Pro</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="flex text-xs font-bold rounded-full py-1 px-4 text-[#368468] items-center bg-[#D3F3E6]">
+                            <svg class="mr-2" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.99311 1.40604L9.94706 3.89961C9.94048 4.24173 10.1577 4.69571 10.434 4.89966L12.0657 6.13659C13.1118 6.92611 12.9407 7.89328 11.6906 8.28804L9.56552 8.95255C9.21024 9.0644 8.83522 9.45258 8.7431 9.81444L8.2365 11.7488C7.83516 13.2752 6.83503 13.4265 6.00604 12.0843L4.8481 10.2092C4.63756 9.86708 4.13753 9.61048 3.74277 9.63022L1.5453 9.74207C-0.0271627 9.82102 -0.474564 8.91307 0.551812 7.71563L1.85451 6.20239C2.09794 5.91947 2.20979 5.39313 2.09794 5.03784L1.43346 2.91271C1.04528 1.66263 1.74268 0.971808 2.98617 1.37973L4.92708 2.01792C5.25606 2.12319 5.74951 2.05081 6.02584 1.84685L8.05227 0.38624C9.14444 -0.40328 10.0194 0.0572734 9.99311 1.40604Z" fill="#368468"/>
+                                <path opacity="0.4" d="M12.7236 12.1501L10.73 10.1565C10.5392 9.96573 10.2234 9.96573 10.0326 10.1565C9.84183 10.3473 9.84183 10.6631 10.0326 10.8539L12.0262 12.8475C12.1249 12.9462 12.2499 12.9922 12.3749 12.9922C12.4999 12.9922 12.6249 12.9462 12.7236 12.8475C12.9144 12.6567 12.9144 12.3409 12.7236 12.1501Z" fill="#368468"/>
+                            </svg>
+                            Shopify Liquid
+                        </span>
+                        <span class="flex text-xs font-bold rounded-full py-1 px-4 text-[#368468] items-center bg-[#D3F3E6]">
+                            <svg class="mr-2" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.99311 1.40604L9.94706 3.89961C9.94048 4.24173 10.1577 4.69571 10.434 4.89966L12.0657 6.13659C13.1118 6.92611 12.9407 7.89328 11.6906 8.28804L9.56552 8.95255C9.21024 9.0644 8.83522 9.45258 8.7431 9.81444L8.2365 11.7488C7.83516 13.2752 6.83503 13.4265 6.00604 12.0843L4.8481 10.2092C4.63756 9.86708 4.13753 9.61048 3.74277 9.63022L1.5453 9.74207C-0.0271627 9.82102 -0.474564 8.91307 0.551812 7.71563L1.85451 6.20239C2.09794 5.91947 2.20979 5.39313 2.09794 5.03784L1.43346 2.91271C1.04528 1.66263 1.74268 0.971808 2.98617 1.37973L4.92708 2.01792C5.25606 2.12319 5.74951 2.05081 6.02584 1.84685L8.05227 0.38624C9.14444 -0.40328 10.0194 0.0572734 9.99311 1.40604Z" fill="#368468"/>
+                                <path opacity="0.4" d="M12.7236 12.1501L10.73 10.1565C10.5392 9.96573 10.2234 9.96573 10.0326 10.1565C9.84183 10.3473 9.84183 10.6631 10.0326 10.8539L12.0262 12.8475C12.1249 12.9462 12.2499 12.9922 12.3749 12.9922C12.4999 12.9922 12.6249 12.9462 12.7236 12.8475C12.9144 12.6567 12.9144 12.3409 12.7236 12.1501Z" fill="#368468"/>
+                            </svg>
+                            PHP
+                        </span>
+                        <span class="flex text-xs font-bold rounded-full py-1 px-4 text-[#368468] items-center bg-[#D3F3E6]">
+                            <svg class="mr-2" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.99311 1.40604L9.94706 3.89961C9.94048 4.24173 10.1577 4.69571 10.434 4.89966L12.0657 6.13659C13.1118 6.92611 12.9407 7.89328 11.6906 8.28804L9.56552 8.95255C9.21024 9.0644 8.83522 9.45258 8.7431 9.81444L8.2365 11.7488C7.83516 13.2752 6.83503 13.4265 6.00604 12.0843L4.8481 10.2092C4.63756 9.86708 4.13753 9.61048 3.74277 9.63022L1.5453 9.74207C-0.0271627 9.82102 -0.474564 8.91307 0.551812 7.71563L1.85451 6.20239C2.09794 5.91947 2.20979 5.39313 2.09794 5.03784L1.43346 2.91271C1.04528 1.66263 1.74268 0.971808 2.98617 1.37973L4.92708 2.01792C5.25606 2.12319 5.74951 2.05081 6.02584 1.84685L8.05227 0.38624C9.14444 -0.40328 10.0194 0.0572734 9.99311 1.40604Z" fill="#368468"/>
+                                <path opacity="0.4" d="M12.7236 12.1501L10.73 10.1565C10.5392 9.96573 10.2234 9.96573 10.0326 10.1565C9.84183 10.3473 9.84183 10.6631 10.0326 10.8539L12.0262 12.8475C12.1249 12.9462 12.2499 12.9922 12.3749 12.9922C12.4999 12.9922 12.6249 12.9462 12.7236 12.8475C12.9144 12.6567 12.9144 12.3409 12.7236 12.1501Z" fill="#368468"/>
+                            </svg>
+                            Javascript
+                        </span>
+                        <span class="flex text-xs font-bold rounded-full py-1 px-4 text-[#368468] items-center bg-[#D3F3E6]">
+                            <svg class="mr-2" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.99311 1.40604L9.94706 3.89961C9.94048 4.24173 10.1577 4.69571 10.434 4.89966L12.0657 6.13659C13.1118 6.92611 12.9407 7.89328 11.6906 8.28804L9.56552 8.95255C9.21024 9.0644 8.83522 9.45258 8.7431 9.81444L8.2365 11.7488C7.83516 13.2752 6.83503 13.4265 6.00604 12.0843L4.8481 10.2092C4.63756 9.86708 4.13753 9.61048 3.74277 9.63022L1.5453 9.74207C-0.0271627 9.82102 -0.474564 8.91307 0.551812 7.71563L1.85451 6.20239C2.09794 5.91947 2.20979 5.39313 2.09794 5.03784L1.43346 2.91271C1.04528 1.66263 1.74268 0.971808 2.98617 1.37973L4.92708 2.01792C5.25606 2.12319 5.74951 2.05081 6.02584 1.84685L8.05227 0.38624C9.14444 -0.40328 10.0194 0.0572734 9.99311 1.40604Z" fill="#368468"/>
+                                <path opacity="0.4" d="M12.7236 12.1501L10.73 10.1565C10.5392 9.96573 10.2234 9.96573 10.0326 10.1565C9.84183 10.3473 9.84183 10.6631 10.0326 10.8539L12.0262 12.8475C12.1249 12.9462 12.2499 12.9922 12.3749 12.9922C12.4999 12.9922 12.6249 12.9462 12.7236 12.8475C12.9144 12.6567 12.9144 12.3409 12.7236 12.1501Z" fill="#368468"/>
+                            </svg>
+                            Alpine JS
+                        </span>
+                        <span class="flex text-xs font-bold rounded-full py-1 px-4 text-[#368468] items-center bg-[#D3F3E6]">
+                            <svg class="mr-2" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.99311 1.40604L9.94706 3.89961C9.94048 4.24173 10.1577 4.69571 10.434 4.89966L12.0657 6.13659C13.1118 6.92611 12.9407 7.89328 11.6906 8.28804L9.56552 8.95255C9.21024 9.0644 8.83522 9.45258 8.7431 9.81444L8.2365 11.7488C7.83516 13.2752 6.83503 13.4265 6.00604 12.0843L4.8481 10.2092C4.63756 9.86708 4.13753 9.61048 3.74277 9.63022L1.5453 9.74207C-0.0271627 9.82102 -0.474564 8.91307 0.551812 7.71563L1.85451 6.20239C2.09794 5.91947 2.20979 5.39313 2.09794 5.03784L1.43346 2.91271C1.04528 1.66263 1.74268 0.971808 2.98617 1.37973L4.92708 2.01792C5.25606 2.12319 5.74951 2.05081 6.02584 1.84685L8.05227 0.38624C9.14444 -0.40328 10.0194 0.0572734 9.99311 1.40604Z" fill="#368468"/>
+                                <path opacity="0.4" d="M12.7236 12.1501L10.73 10.1565C10.5392 9.96573 10.2234 9.96573 10.0326 10.1565C9.84183 10.3473 9.84183 10.6631 10.0326 10.8539L12.0262 12.8475C12.1249 12.9462 12.2499 12.9922 12.3749 12.9922C12.4999 12.9922 12.6249 12.9462 12.7236 12.8475C12.9144 12.6567 12.9144 12.3409 12.7236 12.1501Z" fill="#368468"/>
+                            </svg>
+                            Livewire
+                        </span>
+                        <span class="flex text-xs font-bold rounded-full py-1 px-4 text-[#368468] items-center bg-[#D3F3E6]">
+                            <svg class="mr-2" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.99311 1.40604L9.94706 3.89961C9.94048 4.24173 10.1577 4.69571 10.434 4.89966L12.0657 6.13659C13.1118 6.92611 12.9407 7.89328 11.6906 8.28804L9.56552 8.95255C9.21024 9.0644 8.83522 9.45258 8.7431 9.81444L8.2365 11.7488C7.83516 13.2752 6.83503 13.4265 6.00604 12.0843L4.8481 10.2092C4.63756 9.86708 4.13753 9.61048 3.74277 9.63022L1.5453 9.74207C-0.0271627 9.82102 -0.474564 8.91307 0.551812 7.71563L1.85451 6.20239C2.09794 5.91947 2.20979 5.39313 2.09794 5.03784L1.43346 2.91271C1.04528 1.66263 1.74268 0.971808 2.98617 1.37973L4.92708 2.01792C5.25606 2.12319 5.74951 2.05081 6.02584 1.84685L8.05227 0.38624C9.14444 -0.40328 10.0194 0.0572734 9.99311 1.40604Z" fill="#368468"/>
+                                <path opacity="0.4" d="M12.7236 12.1501L10.73 10.1565C10.5392 9.96573 10.2234 9.96573 10.0326 10.1565C9.84183 10.3473 9.84183 10.6631 10.0326 10.8539L12.0262 12.8475C12.1249 12.9462 12.2499 12.9922 12.3749 12.9922C12.4999 12.9922 12.6249 12.9462 12.7236 12.8475C12.9144 12.6567 12.9144 12.3409 12.7236 12.1501Z" fill="#368468"/>
+                            </svg>
+                            Tailwind
+                        </span>
+                        <span class="flex text-xs font-bold rounded-full py-1 px-4 text-[#368468] items-center bg-[#D3F3E6]">
+                            <svg class="mr-2" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.99311 1.40604L9.94706 3.89961C9.94048 4.24173 10.1577 4.69571 10.434 4.89966L12.0657 6.13659C13.1118 6.92611 12.9407 7.89328 11.6906 8.28804L9.56552 8.95255C9.21024 9.0644 8.83522 9.45258 8.7431 9.81444L8.2365 11.7488C7.83516 13.2752 6.83503 13.4265 6.00604 12.0843L4.8481 10.2092C4.63756 9.86708 4.13753 9.61048 3.74277 9.63022L1.5453 9.74207C-0.0271627 9.82102 -0.474564 8.91307 0.551812 7.71563L1.85451 6.20239C2.09794 5.91947 2.20979 5.39313 2.09794 5.03784L1.43346 2.91271C1.04528 1.66263 1.74268 0.971808 2.98617 1.37973L4.92708 2.01792C5.25606 2.12319 5.74951 2.05081 6.02584 1.84685L8.05227 0.38624C9.14444 -0.40328 10.0194 0.0572734 9.99311 1.40604Z" fill="#368468"/>
+                                <path opacity="0.4" d="M12.7236 12.1501L10.73 10.1565C10.5392 9.96573 10.2234 9.96573 10.0326 10.1565C9.84183 10.3473 9.84183 10.6631 10.0326 10.8539L12.0262 12.8475C12.1249 12.9462 12.2499 12.9922 12.3749 12.9922C12.4999 12.9922 12.6249 12.9462 12.7236 12.8475C12.9144 12.6567 12.9144 12.3409 12.7236 12.1501Z" fill="#368468"/>
+                            </svg>
+                            Laravel
+                        </span>
+                        <span class="flex text-xs font-bold rounded-full py-1 px-4 text-[#368468] items-center bg-[#D3F3E6]">
+                            <svg class="mr-2" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.99311 1.40604L9.94706 3.89961C9.94048 4.24173 10.1577 4.69571 10.434 4.89966L12.0657 6.13659C13.1118 6.92611 12.9407 7.89328 11.6906 8.28804L9.56552 8.95255C9.21024 9.0644 8.83522 9.45258 8.7431 9.81444L8.2365 11.7488C7.83516 13.2752 6.83503 13.4265 6.00604 12.0843L4.8481 10.2092C4.63756 9.86708 4.13753 9.61048 3.74277 9.63022L1.5453 9.74207C-0.0271627 9.82102 -0.474564 8.91307 0.551812 7.71563L1.85451 6.20239C2.09794 5.91947 2.20979 5.39313 2.09794 5.03784L1.43346 2.91271C1.04528 1.66263 1.74268 0.971808 2.98617 1.37973L4.92708 2.01792C5.25606 2.12319 5.74951 2.05081 6.02584 1.84685L8.05227 0.38624C9.14444 -0.40328 10.0194 0.0572734 9.99311 1.40604Z" fill="#368468"/>
+                                <path opacity="0.4" d="M12.7236 12.1501L10.73 10.1565C10.5392 9.96573 10.2234 9.96573 10.0326 10.1565C9.84183 10.3473 9.84183 10.6631 10.0326 10.8539L12.0262 12.8475C12.1249 12.9462 12.2499 12.9922 12.3749 12.9922C12.4999 12.9922 12.6249 12.9462 12.7236 12.8475C12.9144 12.6567 12.9144 12.3409 12.7236 12.1501Z" fill="#368468"/>
+                            </svg>
+                            jQuery
+                        </span>
+                        <span class="flex text-xs font-bold rounded-full py-1 px-4 text-[#846936] items-center bg-[#F3EED3]">
+                            Figma
+                        </span>
+                        <span class="flex text-xs font-bold rounded-full py-1 px-4 text-[#846936] items-center bg-[#F3EED3]">
+                            React
+                        </span>
+                        <span class="flex text-xs font-bold rounded-full py-1 px-4 text-[#846936] items-center bg-[#F3EED3]">
+                            Vue JS
+                        </span>
+                        <span class="flex text-xs font-bold rounded-full py-1 px-4 text-[#846936] items-center bg-[#F3EED3]">
+                            MySQL
+                        </span>
+                        <span class="flex text-xs font-bold rounded-full py-1 px-4 text-[#843636] items-center bg-[#F3D3D3]">
+                            React Native
+                        </span>
+                        <span class="flex text-xs font-bold rounded-full py-1 px-4 text-[#843636] items-center bg-[#F3D3D3]">
+                            Angular
+                        </span>
+                        <span class="flex text-xs font-bold rounded-full py-1 px-4 text-[#843636] items-center bg-[#F3D3D3]">
+                            Three JS
+                        </span>
+                        <span class="flex text-xs font-bold rounded-full py-1 px-4 text-[#843636] items-center bg-[#F3D3D3]">
+                            WebGL
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-[1280px] flex flex-col justify-center items-center py-12 mx-auto">
+        <div class="w-3/4 mx-auto text-center">
+            <h2 class="font-normal text-2xl">Get in Touch</h2>
+            <h1 class="font-semibold mt-3 leading-[4rem] text-5xl">Let’s make something happen, book a call with me now!</h1>
+        </div>
+        <div class="mt-8 w-full">
+            <form action="">
+                <div class="grid grid-cols-4 gap-5">
+                    <div class="col-span-1">
+                        <input class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Full Name" type="text" name="" id="">
+                    </div>
+                    <div class="col-span-1">
+                        <input class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Email" type="text" name="" id="">
+                    </div>
+                    <div class="col-span-1">
+                        <input class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Phone" type="text" name="" id="">
+                    </div>
+                    <div class="col-span-1">
+                        <input class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Subject" type="text" name="" id="">
+                    </div>
+                    <div class="col-span-full relative">
+                        <textarea rows="8" class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Message" type="text" name="" id=""></textarea>
+                        <button type="submit" class="flex absolute bottom-0 right-0 m-4 mt-8 justify-between text-white font-bold items-center bg-[#202020] rounded-full px-5 w-52 h-[3rem]">
+                            Enquire Now
+                            <span>
+                                <svg class="fill-current text-white" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.92 11.62C17.8724 11.4973 17.801 11.3851 17.71 11.29L12.71 6.29C12.6168 6.19676 12.5061 6.1228 12.3842 6.07234C12.2624 6.02188 12.1319 5.99591 12 5.99591C11.7337 5.99591 11.4783 6.1017 11.29 6.29C11.1968 6.38324 11.1228 6.49393 11.0723 6.61575C11.0219 6.73758 10.9959 6.86814 10.9959 7C10.9959 7.2663 11.1017 7.5217 11.29 7.71L14.59 11H7C6.73478 11 6.48043 11.1054 6.29289 11.2929C6.10536 11.4804 6 11.7348 6 12C6 12.2652 6.10536 12.5196 6.29289 12.7071C6.48043 12.8946 6.73478 13 7 13H14.59L11.29 16.29C11.1963 16.383 11.1219 16.4936 11.0711 16.6154C11.0203 16.7373 10.9942 16.868 10.9942 17C10.9942 17.132 11.0203 17.2627 11.0711 17.3846C11.1219 17.5064 11.1963 17.617 11.29 17.71C11.383 17.8037 11.4936 17.8781 11.6154 17.9289C11.7373 17.9797 11.868 18.0058 12 18.0058C12.132 18.0058 12.2627 17.9797 12.3846 17.9289C12.5064 17.8781 12.617 17.8037 12.71 17.71L17.71 12.71C17.801 12.6149 17.8724 12.5028 17.92 12.38C18.02 12.1365 18.02 11.8635 17.92 11.62Z" fill="white"/>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
+    <svg viewBox='0 0 200 200' width='200' height='200' xmlns='http://www.w3.org/2000/svg' class="link__svg" aria-labelledby="link1-title link1-desc">
+    
+        <path id="link-circle" class="link__path" d="M 20, 100 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" stroke="none" fill="none" />
+        <path class="link__arrow" d="M 75 100 L 125 100 L 110 85 M 125 100 L 110 115"  fill="none" />
+
+        <text class="link__text">
+            <textPath href="#link-circle" stroke="none">
+                Project - Project - Project -
+            </textPath>
+        </text>
+    </svg>
+</body>
+</html>
