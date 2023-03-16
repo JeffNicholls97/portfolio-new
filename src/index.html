@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class=" overflow-x-hidden" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,24 +15,24 @@
 </head>
 <body class="bg-[#EEEAEA]">
     <div class="opening-screen flex z-50 items-center overflow-hidden justify-center w-full h-screen absolute inset-0 bg-[#202020]">
-        <h2 class="text-white opacity-0 translate-y-[100%] open-text font-bold text-[50rem]">J</h2>
-        <h2 class="text-white opacity-0 translate-y-full open-text font-bold text-[50rem]">N</h2>
+        <h2 class="text-white opacity-0 translate-y-[100%] open-text font-bold text-[15rem] md:text-[50rem]">J</h2>
+        <h2 class="text-white opacity-0 translate-y-full open-text font-bold text-[15rem] md:text-[50rem]">N</h2>
     </div>
     <nav>
         <div class="w-full h-[80px] bg-[#202020]">
-            <div class="max-w-[1280px] h-full flex items-center justify-between mx-auto">
+            <div class="max-w-[1280px] px-5 h-full flex items-center md:justify-between mx-auto">
                 <div class="flex">
-                    <div class="w-20 h-20">
-                        <img class="object-contain" src="/src/images/logo-trans.png" alt="">
+                    <div class="w-20 flex items-center sm:justify-center h-20">
+                        <img class="object-contain w-14 h-14" src="/src/images/logo-trans.png" alt="">
                     </div>
-                    <div class="nav-bar ml-20 font-bold text-white flex gap-10 items-center">
+                    <div class="nav-bar hidden font-bold text-white flex gap-10 items-center">
                         <a href="/">Overview</a>
                         <a href="/">Projects</a>
                         <a href="/">Skills</a>
                     </div>
                 </div>
-                <div class="flex">
-                    <a class="flex justify-between font-bold items-center bg-white rounded-md px-3 w-52 h-[3rem]" href="/">
+                <div class="flex sm:grow-0 grow">
+                    <a class="flex justify-between font-bold items-center bg-white rounded-md px-3 w-full sm:w-52 h-[3rem]" href="/">
                         Get in Touch
                         <span>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,12 +44,12 @@
             </div>
         </div>
     </nav>
-    <div class="max-w-[1280px] h-[600px] grid grid-cols-2 gap-5 mx-auto">
+    <div class="max-w-[1280px] overflow-x-hidden px-5 lg:px-0 py-10 sm:py-0 sm:h-[600px] grid grid-cols-2 gap-5 mx-auto">
         <div class="col-span-1 flex flex-col justify-center">
             <div class="p-2 rounded-full overflow-hidden  w-60 text-center uppercase text-sm font-bold border-2 border-black">
                 <div class="block-content">Personal Portfolio</div>
             </div>
-            <div class="font-bold overflow-hidden container-block text-[5rem] mt-8">
+            <div class="font-bold overflow-hidden container-block text-5xl md:text-[5rem] mt-8">
                 <div class="block-content">Jeff Nicholls</div>
             </div>
             <div class="font-normal overflow-hidden container-block mt-8 w-96">
@@ -64,11 +64,11 @@
                 </span>
             </a>
         </div>
-        <div class="col-span-1 flex container-block overflow-hidden items-center justify-center">
+        <div class="col-span-1 hidden md:flex container-block overflow-hidden items-center justify-center">
             <img class="object-contain hero-content w-full" src="/src/images/hero-image.png" alt="">
         </div>
     </div>
-    <div class="marquee bg-[#202020]">
+    <div class="marquee  overflow-x-hidden bg-[#202020]">
         <div class="track">
         <div class="content flex items-center gap-5 text-[#EEEAEA] h-[60px] text-[8rem] uppercase font-bold">
             <span>Shopify</span>
@@ -83,12 +83,12 @@
         </div>
     </div>
 
-    <div class="max-w-[1280px] py-12 mx-auto">
+    <div class="max-w-[1280px] overflow-x-hidden px-5 sm:px-0 py-12 mx-auto">
         <div class="heading overflow-hidden container-block w-96 inline-block relative">
             <h2 class="text-2xl block-content font-bold">View Recent Projects</h2>
             <span class="w-40 bg-black block-content rounded-full h-1 absolute -right-10 top-1/2 -translate-y-1/2"></span>
         </div>
-        <div class="grid mt-10 grid-cols-4 gap-5">
+        <div class="grid mt-10 grid-cols-1 md:grid-cols-4 gap-5">
             <div class="col-span-1 overflow-hidden border-2 border-black rounded-xl p-10 h-full flex flex-col justify-between">
                 <p>From agencies to freelance, I have a plethora of work to show my experience and technical ability. take a browse through some of the most recent projects I have undertaken.</p>
                 <div class="h-10 pointer-events-none w-full relative">
@@ -100,21 +100,21 @@
                 <a href="/" class="inline-block">View Work</a>
             </div>
             <div class="col-span-1 bg-gray-200 relative rounded-md">
-                <a target="_blank" class="w-full h-full group relative" href="https://traditionalbeams.com/">
+                <a target="_blank" class="w-full block h-full group relative" href="https://traditionalbeams.com/">
                     <!-- <span class="inset-0 block w-full top-0 left-0 h-full absolute z-10">
                         hi
                     </span> -->
-                    <img class="object-cover" src="/src/images/trad-beams.png" alt="">
+                    <img class="object-cover w-full" src="/src/images/trad-beams.png" alt="">
                 </a>
             </div>
             <div class="col-span-1 bg-gray-200 rounded-md">
                 <a target="_blank" class="project-view" href="https://www.astrocart.com/">
-                    <img class="object-cover" src="/src/images/case-2.png" alt="">
+                    <img class="object-cover w-full" src="/src/images/case-2.png" alt="">
                 </a>
             </div>
             <div class="col-span-1 bg-gray-200 rounded-md">
                 <a target="_blank" href="https://olivias.com/">
-                    <img class="object-cover" src="/src/images/case-3.png" alt="">
+                    <img class="object-cover w-full" src="/src/images/case-3.png" alt="">
                 </a>
             </div>
         </div>
@@ -122,12 +122,12 @@
 
     <div class="w-full bg-[#202020]">
         <div class="max-w-[1280px] py-12 mx-auto">
-            <div class="heading overflow-hidden w-96 inline-block relative">
+            <div class="heading px-5 md:px-0 overflow-hidden w-96 inline-block relative">
                 <h2 class="text-2xl text-white font-bold">View Skills & Tech</h2>
                 <span class="w-40 bg-white rounded-full h-1 absolute -right-10 top-1/2 -translate-y-1/2"></span>
             </div>
-            <div class="flex items-center mt-10 justify-between gap-5">
-                <div class="col-span-1 p-4 rounded-lg bg-[#575757]">
+            <div class="flex flex-col px-5 md:px-0 md:flex-row md:items-center mt-10 md:justify-between gap-2 md:gap-5">
+                <div class="col-span-1 w-full md:w-auto p-4 rounded-lg bg-[#575757]">
                     <p class="font-bold text-sm text-white"><span class="text-[#B4B4B4] mr-2 text-sm font-normal">4+ Years</span>Shopify Development</p>
                 </div>
                 <div class="col-span-1 p-4 rounded-lg bg-[#575757]">
@@ -143,12 +143,12 @@
                     <p class="font-bold text-sm text-white"><span class="text-[#B4B4B4] mr-2 text-sm font-normal">26+ Years</span>Supporting the Boro</p>
                 </div>
             </div>
-            <div class="grid mt-5 grid-cols-12 gap-5">
-                <div class="col-span-5 relative p-4 rounded-lg bg-[#575757]">
+            <div class="grid px-5 md:px-0 mt-5 grid-cols-12 gap-5">
+                <div class="md:col-span-5 col-span-full relative p-4 rounded-lg bg-[#575757]">
                     <img class="absolute right-10 top-1/2 object-contain object-right w-3/4 h-3/4 -translate-y-1/2" src="/src/images/github-logo.png" alt="github-logo">
                     <p class="text-white font-bold">Github Stats</p>
                     <div class="mt-4 flex gap-2 flex-col">
-                        <span class="flex items-center">
+                        <span class="flex relative items-center">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M20.72 15.0533L13.1733 7.52001C13.0494 7.39504 12.9019 7.29584 12.7394 7.22815C12.577 7.16046 12.4027 7.12561 12.2267 7.12561C12.0506 7.12561 11.8764 7.16046 11.7139 7.22815C11.5514 7.29584 11.4039 7.39504 11.28 7.52001C11.0317 7.76982 10.8923 8.10776 10.8923 8.46001C10.8923 8.81226 11.0317 9.15019 11.28 9.40001L17.88 16.0667L11.28 22.6667C11.0317 22.9165 10.8923 23.2544 10.8923 23.6067C10.8923 23.9589 11.0317 24.2969 11.28 24.5467C11.4035 24.6727 11.5507 24.7729 11.7132 24.8415C11.8757 24.9102 12.0503 24.9459 12.2267 24.9467C12.4031 24.9459 12.5776 24.9102 12.7401 24.8415C12.9026 24.7729 13.0498 24.6727 13.1733 24.5467L20.72 17.0133C20.8553 16.8885 20.9633 16.7369 21.0372 16.5683C21.1111 16.3996 21.1492 16.2175 21.1492 16.0333C21.1492 15.8492 21.1111 15.6671 21.0372 15.4984C20.9633 15.3297 20.8553 15.1782 20.72 15.0533V15.0533Z" fill="#202020"/>
                             </svg>
@@ -166,7 +166,7 @@
                             </svg>
                             <span class="text-white text-sm">11 Repositories</span>
                         </span>
-                        <span class="flex items-center">
+                        <span class="flex items-center relative z-10">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M20.72 15.0533L13.1733 7.52001C13.0494 7.39504 12.9019 7.29584 12.7394 7.22815C12.577 7.16046 12.4027 7.12561 12.2267 7.12561C12.0506 7.12561 11.8764 7.16046 11.7139 7.22815C11.5514 7.29584 11.4039 7.39504 11.28 7.52001C11.0317 7.76982 10.8923 8.10776 10.8923 8.46001C10.8923 8.81226 11.0317 9.15019 11.28 9.40001L17.88 16.0667L11.28 22.6667C11.0317 22.9165 10.8923 23.2544 10.8923 23.6067C10.8923 23.9589 11.0317 24.2969 11.28 24.5467C11.4035 24.6727 11.5507 24.7729 11.7132 24.8415C11.8757 24.9102 12.0503 24.9459 12.2267 24.9467C12.4031 24.9459 12.5776 24.9102 12.7401 24.8415C12.9026 24.7729 13.0498 24.6727 13.1733 24.5467L20.72 17.0133C20.8553 16.8885 20.9633 16.7369 21.0372 16.5683C21.1111 16.3996 21.1492 16.2175 21.1492 16.0333C21.1492 15.8492 21.1111 15.6671 21.0372 15.4984C20.9633 15.3297 20.8553 15.1782 20.72 15.0533V15.0533Z" fill="#202020"/>
                             </svg>
@@ -174,13 +174,13 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-span-2 group flex relative items-center justify-center p-4 rounded-lg bg-[#575757]">
-                    <a class="absolute inset-0 flex items-center justify-center" href="/src/images/Jeffrey_Nicholls_CV.PDF" download="jeff_nicholls_cv">
-                        <svg class="fill-current transition-all group-hover:text-[#5d5d5d] text-white w-20 h-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 232V334.1l31-31c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-72 72c-9.4 9.4-24.6 9.4-33.9 0l-72-72c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l31 31V232c0-13.3 10.7-24 24-24s24 10.7 24 24z"/></svg>
+                <div class="md:col-span-2 col-span-full group flex relative items-center justify-center p-4 rounded-lg bg-[#575757]">
+                    <a class="md:absolute inset-0 flex items-center justify-center" href="/src/images/Jeffrey_Nicholls_CV.PDF" download="jeff_nicholls_cv">
+                        <svg class="fill-current transition-all md:group-hover:text-[#5d5d5d] text-white w-20 h-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 232V334.1l31-31c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-72 72c-9.4 9.4-24.6 9.4-33.9 0l-72-72c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l31 31V232c0-13.3 10.7-24 24-24s24 10.7 24 24z"/></svg>
                     </a>
-                    <p class="text-white transition-all relative z-10 opacity-0 group-hover:opacity-100 text-sm">Download CV</p>
+                    <p class="text-white transition-all relative z-10 opacity-100 md:opacity-0 group-hover:opacity-100 text-sm">Download CV</p>
                 </div>
-                <div class="col-span-5 p-4 rounded-lg bg-[#575757]">
+                <div class="md:col-span-5 col-span-full p-4 rounded-lg bg-[#575757]">
                     <div class="flex items-center justify-between">
                         <p class="text-white font-bold">Tech Stack</p>
                         <div class="flex items-center">
@@ -281,29 +281,29 @@
         </div>
     </div>
 
-    <div class="max-w-[1280px] flex flex-col justify-center items-center py-12 mx-auto">
-        <div class="w-3/4 mx-auto text-center">
+    <div class="max-w-[1280px] px-5 md:px-0 flex flex-col justify-center items-center py-12 mx-auto">
+        <div class="md:w-3/4 w-full mx-auto text-center">
             <h2 class="font-normal text-2xl">Get in Touch</h2>
             <h1 class="font-semibold mt-3 leading-[4rem] text-5xl">Let’s make something happen, book a call with me now!</h1>
         </div>
         <div class="mt-8 w-full">
             <form action="">
                 <div class="grid grid-cols-4 gap-5">
-                    <div class="col-span-1">
+                    <div class="md:col-span-1 col-span-full">
                         <input class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Full Name" type="text" name="" id="">
                     </div>
-                    <div class="col-span-1">
+                    <div class="md:col-span-1 col-span-full">
                         <input class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Email" type="text" name="" id="">
                     </div>
-                    <div class="col-span-1">
+                    <div class="md:col-span-1 col-span-full">
                         <input class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Phone" type="text" name="" id="">
                     </div>
-                    <div class="col-span-1">
+                    <div class="md:col-span-1 col-span-full">
                         <input class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Subject" type="text" name="" id="">
                     </div>
                     <div class="col-span-full relative">
                         <textarea rows="8" class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Message" type="text" name="" id=""></textarea>
-                        <button type="submit" class="flex absolute bottom-0 right-0 m-4 mt-8 justify-between text-white font-bold items-center bg-[#202020] rounded-full px-5 w-52 h-[3rem]">
+                        <button type="submit" class="flex md:absolute bottom-0 right-0 md:m-4 mt-8 justify-between text-white font-bold items-center bg-[#202020] rounded-full px-5 w-full md:w-52 h-[3rem]">
                             Enquire Now
                             <span>
                                 <svg class="fill-current text-white" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -318,8 +318,8 @@
     </div>
 
 
-    <div class="cursor"></div>
-    <div class="cursor2"></div>
+    <div class="cursor hidden sm:block"></div>
+    <div class="cursor2 hidden sm:block"></div>
     <!-- <svg viewBox='0 0 200 200' width='200' height='200' xmlns='http://www.w3.org/2000/svg' class="link__svg" aria-labelledby="link1-title link1-desc">
     
         <path id="link-circle" class="link__path" d="M 20, 100 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" stroke="none" fill="none" />
