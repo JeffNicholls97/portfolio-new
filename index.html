@@ -14,7 +14,7 @@
     <title>Jeff Nicholls</title>
 </head>
 <body class="bg-[#EEEAEA]">
-    <div class="opening-screen flex z-50 items-center overflow-hidden justify-center w-full h-screen absolute inset-0 bg-[#202020]">
+    <div class="opening-screen hidden flex z-50 items-center overflow-hidden justify-center w-full h-screen absolute inset-0 bg-[#202020]">
         <h2 class="text-white opacity-0 translate-y-[100%] open-text font-bold text-[15rem] md:text-[50rem]">J</h2>
         <h2 class="text-white opacity-0 translate-y-full open-text font-bold text-[15rem] md:text-[50rem]">N</h2>
     </div>
@@ -281,39 +281,59 @@
         </div>
     </div>
 
-    <div class="max-w-[1280px] px-5 md:px-0 flex flex-col justify-center items-center py-12 mx-auto">
-        <div class="md:w-3/4 w-full mx-auto text-center">
-            <h2 class="font-normal text-2xl">Get in Touch</h2>
-            <h1 class="font-semibold mt-3 leading-[4rem] text-5xl">Let’s make something happen, book a call with me now!</h1>
-        </div>
-        <div class="mt-8 w-full">
-            <form action="">
-                <div class="grid grid-cols-4 gap-5">
-                    <div class="md:col-span-1 col-span-full">
-                        <input class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Full Name" type="text" name="" id="">
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <div class="change-background border-t-2 border-[#353535]">
+        <div class="max-w-[1280px] px-5 md:px-0 flex flex-col justify-center items-center py-12 mx-auto">
+            <div class="md:w-3/4 w-full mx-auto text-center">
+                <h2 class="font-normal text-white text-2xl">Get in Touch</h2>
+                <h1 class="font-semibold text-white mt-3 leading-[4rem] text-5xl">Let’s make something happen, book a call with me now!</h1>
+            </div>
+            <div class="mt-8 hidden w-full">
+                <form action="">
+                    <div class="grid grid-cols-4 gap-5">
+                        <div class="md:col-span-1 col-span-full">
+                            <input class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Full Name" type="text" name="" id="">
+                        </div>
+                        <div class="md:col-span-1 col-span-full">
+                            <input class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Email" type="text" name="" id="">
+                        </div>
+                        <div class="md:col-span-1 col-span-full">
+                            <input class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Phone" type="text" name="" id="">
+                        </div>
+                        <div class="md:col-span-1 col-span-full">
+                            <input class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Subject" type="text" name="" id="">
+                        </div>
+                        <div class="col-span-full relative">
+                            <textarea rows="8" class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Message" type="text" name="" id=""></textarea>
+                            <button type="submit" class="flex md:absolute bottom-0 right-0 md:m-4 mt-8 justify-between text-white font-bold items-center bg-[#202020] rounded-full px-5 w-full md:w-52 h-[3rem]">
+                                Enquire Now
+                                <span>
+                                    <svg class="fill-current text-white" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.92 11.62C17.8724 11.4973 17.801 11.3851 17.71 11.29L12.71 6.29C12.6168 6.19676 12.5061 6.1228 12.3842 6.07234C12.2624 6.02188 12.1319 5.99591 12 5.99591C11.7337 5.99591 11.4783 6.1017 11.29 6.29C11.1968 6.38324 11.1228 6.49393 11.0723 6.61575C11.0219 6.73758 10.9959 6.86814 10.9959 7C10.9959 7.2663 11.1017 7.5217 11.29 7.71L14.59 11H7C6.73478 11 6.48043 11.1054 6.29289 11.2929C6.10536 11.4804 6 11.7348 6 12C6 12.2652 6.10536 12.5196 6.29289 12.7071C6.48043 12.8946 6.73478 13 7 13H14.59L11.29 16.29C11.1963 16.383 11.1219 16.4936 11.0711 16.6154C11.0203 16.7373 10.9942 16.868 10.9942 17C10.9942 17.132 11.0203 17.2627 11.0711 17.3846C11.1219 17.5064 11.1963 17.617 11.29 17.71C11.383 17.8037 11.4936 17.8781 11.6154 17.9289C11.7373 17.9797 11.868 18.0058 12 18.0058C12.132 18.0058 12.2627 17.9797 12.3846 17.9289C12.5064 17.8781 12.617 17.8037 12.71 17.71L17.71 12.71C17.801 12.6149 17.8724 12.5028 17.92 12.38C18.02 12.1365 18.02 11.8635 17.92 11.62Z" fill="white"/>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
                     </div>
-                    <div class="md:col-span-1 col-span-full">
-                        <input class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Email" type="text" name="" id="">
-                    </div>
-                    <div class="md:col-span-1 col-span-full">
-                        <input class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Phone" type="text" name="" id="">
-                    </div>
-                    <div class="md:col-span-1 col-span-full">
-                        <input class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Subject" type="text" name="" id="">
-                    </div>
-                    <div class="col-span-full relative">
-                        <textarea rows="8" class="w-full p-3 border-2 border-black rounded-md bg-[#E4E1E1]" placeholder="Message" type="text" name="" id=""></textarea>
-                        <button type="submit" class="flex md:absolute bottom-0 right-0 md:m-4 mt-8 justify-between text-white font-bold items-center bg-[#202020] rounded-full px-5 w-full md:w-52 h-[3rem]">
-                            Enquire Now
-                            <span>
-                                <svg class="fill-current text-white" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M17.92 11.62C17.8724 11.4973 17.801 11.3851 17.71 11.29L12.71 6.29C12.6168 6.19676 12.5061 6.1228 12.3842 6.07234C12.2624 6.02188 12.1319 5.99591 12 5.99591C11.7337 5.99591 11.4783 6.1017 11.29 6.29C11.1968 6.38324 11.1228 6.49393 11.0723 6.61575C11.0219 6.73758 10.9959 6.86814 10.9959 7C10.9959 7.2663 11.1017 7.5217 11.29 7.71L14.59 11H7C6.73478 11 6.48043 11.1054 6.29289 11.2929C6.10536 11.4804 6 11.7348 6 12C6 12.2652 6.10536 12.5196 6.29289 12.7071C6.48043 12.8946 6.73478 13 7 13H14.59L11.29 16.29C11.1963 16.383 11.1219 16.4936 11.0711 16.6154C11.0203 16.7373 10.9942 16.868 10.9942 17C10.9942 17.132 11.0203 17.2627 11.0711 17.3846C11.1219 17.5064 11.1963 17.617 11.29 17.71C11.383 17.8037 11.4936 17.8781 11.6154 17.9289C11.7373 17.9797 11.868 18.0058 12 18.0058C12.132 18.0058 12.2627 17.9797 12.3846 17.9289C12.5064 17.8781 12.617 17.8037 12.71 17.71L17.71 12.71C17.801 12.6149 17.8724 12.5028 17.92 12.38C18.02 12.1365 18.02 11.8635 17.92 11.62Z" fill="white"/>
-                                </svg>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
+            <div class="mt-8 w-full flex items-center justify-center">
+                <a href="mailto:jeffnichollsweb@gmail.com?subject=Let's work on a project!" class="generate-button">
+                    <svg class="icon" viewBox="0 0 24 26">
+                      <path
+                        d="M5.16515 2.62145L5.8075 0.999247C5.83876 0.919722 5.9154 0.866699 6.00112 0.866699C6.08683 0.866699 6.16347 0.919722 6.19473 0.999247L6.83708 2.62145L8.44145 3.27094C8.5201 3.30254 8.57254 3.38003 8.57254 3.4667C8.57254 3.55337 8.5201 3.63085 8.44145 3.66246L6.83708 4.31195L6.19473 5.93415C6.16347 6.0147 6.08683 6.0667 6.00112 6.0667C5.9154 6.0667 5.83876 6.0147 5.8075 5.93415L5.16515 4.31195L3.56078 3.66246C3.48112 3.63085 3.42969 3.55337 3.42969 3.4667C3.42969 3.38003 3.48112 3.30254 3.56078 3.27094L5.16515 2.62145Z"
+                      />
+                      <path
+                        d="M11.2362 9.43967C11.5502 9.30067 11.8015 9.05025 11.9405 8.73617L13.5494 5.11725C13.7169 4.74204 14.0887 4.5 14.5 4.5C14.9112 4.5 15.2839 4.74204 15.4506 5.11725L17.0603 8.73617C17.1985 9.05025 17.4497 9.3015 17.7638 9.43967L21.3827 11.0494C21.7579 11.2161 22 11.5887 22 12C22 12.4112 21.7579 12.7831 21.3827 12.9506L17.7638 14.5595C17.4497 14.6985 17.1993 14.9497 17.0603 15.2638L15.4506 18.8827C15.2839 19.2579 14.9112 19.5 14.5 19.5C14.0887 19.5 13.7169 19.2579 13.5494 18.8827L11.9405 15.2638C11.8015 14.9497 11.5502 14.6985 11.2362 14.5595L7.61725 12.9506C7.24204 12.7831 7 12.4112 7 12C7 11.5887 7.24204 11.2161 7.61725 11.0494L11.2362 9.43967Z"
+                      />
+                      <path
+                        d="M4.60728 19.392L5.67703 16.6875C5.72997 16.5541 5.85854 16.4666 6.00056 16.4666C6.14258 16.4666 6.27031 16.5541 6.32325 16.6875L7.39299 19.392L10.0678 20.4736C10.1997 20.5271 10.2863 20.6563 10.2863 20.7999C10.2863 20.9435 10.1997 21.0735 10.0678 21.1271L7.39299 22.2087L6.32325 24.9123C6.27031 25.0457 6.14258 25.1332 6.00056 25.1332C5.85854 25.1332 5.72997 25.0457 5.67703 24.9123L4.60728 22.2087L1.93333 21.1271C1.8014 21.0735 1.71484 20.9435 1.71484 20.7999C1.71484 20.6563 1.8014 20.5271 1.93333 20.4736L4.60728 19.392Z"
+                      />
+                    </svg>
+                    <span>Let's Work Together</span>
+                  </a>
+                <a class="hidden" href="mailto:jeffnichollsweb@gmail.com?subject=Let's work on a project!">Let's Work Together!</a>
+            </div>
         </div>
     </div>
 
