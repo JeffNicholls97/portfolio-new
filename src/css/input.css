@@ -7,6 +7,10 @@
     cursor: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .marquee {
     position: relative;
     width: 100vw;
@@ -301,11 +305,38 @@
     pointer-events: none;
   }
   .change-background:has(.generate-button:hover) {
-    background-color: #10042E;
+    background-color: #202020;
   }
   .change-background:after {
     transition: opacity 0.3s;
   }
   .change-background:hover :after {
     opacity: 0.25;
+  }
+
+  .wrapper {
+    transition: all 0.5s;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  .card:hover .wrapper {
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  }
+
+  .orig-per {
+    transition: all 0.5s;
+    position: absolute;
+    transform: translate3d(0%, -2%, 100px);
+    height: 330px;
+    object-fit: cover;
+    padding: 20px;
+  }
+
+  .swimlane {
+    @apply grid snap-mandatory grid-flow-col snap-x w-full gap-4 scroll-px-6 px-6 pb-4 overflow-x-scroll justify-start;
   }
