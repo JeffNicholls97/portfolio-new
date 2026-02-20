@@ -130,7 +130,7 @@
                     </div>
                     <div class="bg-white/10 rounded-lg px-4 py-2">
                         <p class="text-xs text-white/50">Progress</p>
-                        <p class="text-sm text-white font-semibold">Saved as you go</p>
+                        <p class="text-sm text-white font-semibold">Auto-saved locally</p>
                     </div>
                 </div>
             </div>
@@ -619,6 +619,101 @@
     (function() {
         emailjs.init('-N-3aakQbTLggw5jD');
 
+        // ── Auto-save to localStorage ──
+        var STORAGE_KEY = 'eightluxuries_onboarding';
+
+        function saveForm() {
+            var form = document.getElementById('onboarding-form');
+            var data = {};
+
+            // Text inputs, urls, emails, tel, dates
+            form.querySelectorAll('input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="date"]').forEach(function(input) {
+                if (input.name) data[input.name] = input.value;
+            });
+
+            // Textareas
+            form.querySelectorAll('textarea').forEach(function(ta) {
+                if (ta.name) data[ta.name] = ta.value;
+            });
+
+            // Radio buttons
+            form.querySelectorAll('input[type="radio"]:checked').forEach(function(radio) {
+                data[radio.name] = radio.value;
+            });
+
+            // Checkboxes
+            var checkboxes = {};
+            form.querySelectorAll('input[type="checkbox"]').forEach(function(cb) {
+                if (!checkboxes[cb.name]) checkboxes[cb.name] = [];
+                if (cb.checked) checkboxes[cb.name].push(cb.value);
+            });
+            Object.keys(checkboxes).forEach(function(key) {
+                data['_cb_' + key] = checkboxes[key];
+            });
+
+            // Color inputs
+            form.querySelectorAll('input[type="color"]').forEach(function(input) {
+                if (input.name) data[input.name] = input.value;
+            });
+
+            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch(e) {}
+        }
+
+        function restoreForm() {
+            var raw;
+            try { raw = localStorage.getItem(STORAGE_KEY); } catch(e) { return; }
+            if (!raw) return;
+
+            var data;
+            try { data = JSON.parse(raw); } catch(e) { return; }
+
+            var form = document.getElementById('onboarding-form');
+
+            // Text inputs, urls, emails, tel, dates
+            form.querySelectorAll('input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="date"]').forEach(function(input) {
+                if (input.name && data[input.name] !== undefined) input.value = data[input.name];
+            });
+
+            // Textareas
+            form.querySelectorAll('textarea').forEach(function(ta) {
+                if (ta.name && data[ta.name] !== undefined) ta.value = data[ta.name];
+            });
+
+            // Radio buttons
+            form.querySelectorAll('input[type="radio"]').forEach(function(radio) {
+                if (data[radio.name] !== undefined && radio.value === data[radio.name]) {
+                    radio.checked = true;
+                }
+            });
+
+            // Checkboxes
+            form.querySelectorAll('input[type="checkbox"]').forEach(function(cb) {
+                var saved = data['_cb_' + cb.name];
+                if (saved && saved.indexOf(cb.value) !== -1) {
+                    cb.checked = true;
+                    // Trigger visual tag state
+                    var tag = cb.closest('.priority-tag');
+                    if (tag) tag.classList.add('selected');
+                }
+            });
+
+            // Color inputs
+            form.querySelectorAll('input[type="color"]').forEach(function(input) {
+                if (input.name && data[input.name] !== undefined) input.value = data[input.name];
+            });
+        }
+
+        function clearSavedForm() {
+            try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+        }
+
+        // Restore on load
+        restoreForm();
+
+        // Save on every input/change event
+        document.getElementById('onboarding-form').addEventListener('input', saveForm);
+        document.getElementById('onboarding-form').addEventListener('change', saveForm);
+
         // ── Progress tracking ──
         var sectionLabels = {
             1: 'Welcome',
@@ -832,6 +927,7 @@
         });
 
         function showSuccess() {
+            clearSavedForm();
             document.getElementById('submit-section').classList.add('hidden');
             document.getElementById('success-section').classList.remove('hidden');
             document.getElementById('success-section').scrollIntoView({ behavior: 'smooth' });
