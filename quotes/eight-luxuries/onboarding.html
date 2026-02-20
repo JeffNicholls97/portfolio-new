@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html class="overflow-x-hidden" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Onboarding - EightLuxuries | Jeff Nicholls</title>
+    <style>
+        .color-swatch { transition: transform 0.15s; }
+        .color-swatch:hover { transform: scale(1.1); }
+        .section-card { opacity: 0; transform: translateY(16px); animation: fadeUp 0.5s ease forwards; }
+        .section-card:nth-child(2) { animation-delay: 0.05s; }
+        .section-card:nth-child(3) { animation-delay: 0.1s; }
+        .section-card:nth-child(4) { animation-delay: 0.15s; }
+        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+        .progress-step.active .step-dot { background-color: #368468; border-color: #368468; }
+        .progress-step.active .step-dot span { color: white; }
+        .progress-step.completed .step-dot { background-color: #368468; border-color: #368468; }
+        .progress-step.completed .step-dot span { color: white; }
+        .progress-step .step-line { background-color: #D5D1D1; }
+        .progress-step.completed .step-line { background-color: #368468; }
+        input[type="color"] { -webkit-appearance: none; border: none; padding: 0; }
+        input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+        input[type="color"]::-webkit-color-swatch { border: 2px solid #D5D1D1; border-radius: 8px; }
+        .style-option input:checked + div { border-color: #202020 !important; background-color: #F5F5F5; }
+        .priority-tag { cursor: pointer; transition: all 0.15s; }
+        .priority-tag.selected { background-color: #202020 !important; color: white !important; border-color: #202020 !important; }
+    </style>
+</head>
+<body class="bg-[#EEEAEA] default-cursor">
+
+    <!-- Header -->
+    <nav>
+        <div class="w-full h-[80px] bg-[#202020]">
+            <div class="max-w-[900px] px-5 h-full flex items-center justify-between mx-auto">
+                <div class="flex items-center gap-3">
+                    <img class="object-contain w-10 h-10" src="/src/images/logo-trans.png" alt="Jeff Nicholls">
+                    <span class="text-white font-bold text-lg">Jeff Nicholls</span>
+                </div>
+                <span class="text-white/60 text-sm">Client Onboarding</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="sticky top-0 z-40 bg-[#EEEAEA]/95 backdrop-blur-sm border-b border-[#D5D1D1]">
+        <div class="max-w-[900px] mx-auto px-5 py-3">
+            <div class="flex items-center justify-between gap-1" id="progress-bar">
+                <div class="progress-step active flex-1 flex items-center" data-step="1">
+                    <div class="step-dot w-7 h-7 rounded-full border-2 border-[#D5D1D1] bg-white flex items-center justify-center shrink-0">
+                        <span class="text-xs font-bold text-[#B4B4B4]">1</span>
+                    </div>
+                    <div class="step-line h-[2px] flex-1 mx-1"></div>
+                </div>
+                <div class="progress-step flex-1 flex items-center" data-step="2">
+                    <div class="step-dot w-7 h-7 rounded-full border-2 border-[#D5D1D1] bg-white flex items-center justify-center shrink-0">
+                        <span class="text-xs font-bold text-[#B4B4B4]">2</span>
+                    </div>
+                    <div class="step-line h-[2px] flex-1 mx-1"></div>
+                </div>
+                <div class="progress-step flex-1 flex items-center" data-step="3">
+                    <div class="step-dot w-7 h-7 rounded-full border-2 border-[#D5D1D1] bg-white flex items-center justify-center shrink-0">
+                        <span class="text-xs font-bold text-[#B4B4B4]">3</span>
+                    </div>
+                    <div class="step-line h-[2px] flex-1 mx-1"></div>
+                </div>
+                <div class="progress-step flex-1 flex items-center" data-step="4">
+                    <div class="step-dot w-7 h-7 rounded-full border-2 border-[#D5D1D1] bg-white flex items-center justify-center shrink-0">
+                        <span class="text-xs font-bold text-[#B4B4B4]">4</span>
+                    </div>
+                    <div class="step-line h-[2px] flex-1 mx-1"></div>
+                </div>
+                <div class="progress-step flex-1 flex items-center" data-step="5">
+                    <div class="step-dot w-7 h-7 rounded-full border-2 border-[#D5D1D1] bg-white flex items-center justify-center shrink-0">
+                        <span class="text-xs font-bold text-[#B4B4B4]">5</span>
+                    </div>
+                    <div class="step-line h-[2px] flex-1 mx-1"></div>
+                </div>
+                <div class="progress-step flex-1 flex items-center" data-step="6">
+                    <div class="step-dot w-7 h-7 rounded-full border-2 border-[#D5D1D1] bg-white flex items-center justify-center shrink-0">
+                        <span class="text-xs font-bold text-[#B4B4B4]">6</span>
+                    </div>
+                    <div class="step-line h-[2px] flex-1 mx-1"></div>
+                </div>
+                <div class="progress-step flex-1 flex items-center" data-step="7">
+                    <div class="step-dot w-7 h-7 rounded-full border-2 border-[#D5D1D1] bg-white flex items-center justify-center shrink-0">
+                        <span class="text-xs font-bold text-[#B4B4B4]">7</span>
+                    </div>
+                    <div class="step-line h-[2px] flex-1 mx-1"></div>
+                </div>
+                <div class="progress-step flex items-center" data-step="8">
+                    <div class="step-dot w-7 h-7 rounded-full border-2 border-[#D5D1D1] bg-white flex items-center justify-center shrink-0">
+                        <span class="text-xs font-bold text-[#B4B4B4]">8</span>
+                    </div>
+                </div>
+            </div>
+            <p class="text-xs text-[#575757] mt-2" id="progress-label">Section 1 of 8 &mdash; Welcome</p>
+        </div>
+    </div>
+
+    <!-- Onboarding Form -->
+    <form id="onboarding-form" novalidate>
+    <div class="max-w-[900px] mx-auto px-5 py-10">
+
+        <!-- 1. Welcome -->
+        <section class="mb-10 section-card" data-section="1">
+            <div class="bg-[#202020] rounded-xl p-8 sm:p-10">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-full bg-[#368468] flex items-center justify-center shrink-0">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2ZM16.78 9.7L11.11 15.37C10.97 15.51 10.78 15.59 10.58 15.59C10.38 15.59 10.19 15.51 10.05 15.37L7.22 12.54C6.93 12.25 6.93 11.77 7.22 11.48C7.51 11.19 7.99 11.19 8.28 11.48L10.58 13.78L15.72 8.64C16.01 8.35 16.49 8.35 16.78 8.64C17.07 8.93 17.07 9.4 16.78 9.7Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-2xl sm:text-3xl font-bold text-white">Welcome aboard, EightLuxuries</h1>
+                </div>
+                <p class="text-white/70 mb-4">Thank you for choosing to work together. Before we begin building your luxury e-commerce platform, I need to gather some key information about your brand, your vision, and the assets we'll be working with.</p>
+                <p class="text-white/70 mb-6">This onboarding form covers everything from your brand identity to technical requirements. Take your time &mdash; the more detail you provide, the closer the first draft will be to your vision.</p>
+                <div class="flex flex-wrap gap-3">
+                    <div class="bg-white/10 rounded-lg px-4 py-2">
+                        <p class="text-xs text-white/50">Estimated time</p>
+                        <p class="text-sm text-white font-semibold">15&ndash;25 minutes</p>
+                    </div>
+                    <div class="bg-white/10 rounded-lg px-4 py-2">
+                        <p class="text-xs text-white/50">Sections</p>
+                        <p class="text-sm text-white font-semibold">8 sections</p>
+                    </div>
+                    <div class="bg-white/10 rounded-lg px-4 py-2">
+                        <p class="text-xs text-white/50">Progress</p>
+                        <p class="text-sm text-white font-semibold">Saved as you go</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Business Information -->
+        <section class="mb-10 section-card" data-section="2">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-8 h-8 rounded-full bg-[#202020] text-white text-sm font-bold flex items-center justify-center shrink-0">1</span>
+                <h2 class="text-xl font-bold text-[#202020]">Business Information</h2>
+            </div>
+            <div class="bg-white rounded-xl border border-[#D5D1D1] p-6">
+                <p class="text-sm text-[#575757] mb-6">Basic details about your business so we're aligned from the start.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                    <div>
+                        <label class="block text-sm font-semibold text-[#202020] mb-2">Business Name <span class="text-red-400">*</span></label>
+                        <input type="text" name="business_name" value="EightLuxuries" required class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-[#202020] mb-2">Contact Name <span class="text-red-400">*</span></label>
+                        <input type="text" name="contact_name" required placeholder="Your full name" class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                    <div>
+                        <label class="block text-sm font-semibold text-[#202020] mb-2">Email Address <span class="text-red-400">*</span></label>
+                        <input type="email" name="email" required placeholder="you@eightluxuries.com" class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-[#202020] mb-2">Phone Number</label>
+                        <input type="tel" name="phone" placeholder="+44 7XXX XXXXXX" class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <label class="block text-sm font-semibold text-[#202020] mb-2">Business Address</label>
+                    <input type="text" name="address" placeholder="Street address, city, postcode" class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-[#202020] mb-2">Business Description <span class="text-red-400">*</span></label>
+                    <textarea name="business_description" required rows="4" placeholder="Tell me about EightLuxuries &mdash; what you sell, your target audience, what makes you different..." class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors resize-none"></textarea>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Brand Identity -->
+        <section class="mb-10 section-card" data-section="3">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-8 h-8 rounded-full bg-[#202020] text-white text-sm font-bold flex items-center justify-center shrink-0">2</span>
+                <h2 class="text-xl font-bold text-[#202020]">Brand Identity</h2>
+            </div>
+            <div class="bg-white rounded-xl border border-[#D5D1D1] p-6">
+                <p class="text-sm text-[#575757] mb-6">Your brand is everything. Share any existing assets so the website feels authentically <em>you</em>.</p>
+
+                <!-- Existing branding -->
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-[#202020] mb-3">Do you have existing branding?</label>
+                    <div class="flex gap-3">
+                        <label class="flex items-center gap-2 p-3 border-2 border-[#D5D1D1] rounded-lg cursor-pointer hover:border-[#202020] transition-colors">
+                            <input type="radio" name="has_branding" value="yes" class="w-4 h-4 accent-[#202020]">
+                            <span class="text-sm text-[#202020]">Yes</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-3 border-2 border-[#D5D1D1] rounded-lg cursor-pointer hover:border-[#202020] transition-colors">
+                            <input type="radio" name="has_branding" value="partial" class="w-4 h-4 accent-[#202020]">
+                            <span class="text-sm text-[#202020]">Partially</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-3 border-2 border-[#D5D1D1] rounded-lg cursor-pointer hover:border-[#202020] transition-colors">
+                            <input type="radio" name="has_branding" value="no" class="w-4 h-4 accent-[#202020]">
+                            <span class="text-sm text-[#202020]">No, starting fresh</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Logo Files -->
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-[#202020] mb-2">Logo Files</label>
+                    <p class="text-xs text-[#575757] mb-3">Share a link to a folder containing your logo files (PNG, SVG, AI, EPS). Include variations if you have them (light, dark, icon-only).</p>
+                    <input type="url" name="logos_link" placeholder="Google Drive, Dropbox, or WeTransfer link..." class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                </div>
+
+                <!-- Brand Guidelines -->
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-[#202020] mb-2">Brand Guidelines Document</label>
+                    <p class="text-xs text-[#575757] mb-3">If you have a brand book or style guide, share a link to it.</p>
+                    <input type="url" name="guidelines_link" placeholder="Google Drive, Dropbox, or WeTransfer link..." class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                </div>
+
+                <!-- Brand Colors -->
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-[#202020] mb-2">Brand Colours</label>
+                    <p class="text-xs text-[#575757] mb-3">Select your primary and secondary brand colours. Click each swatch to change.</p>
+                    <div class="flex flex-wrap gap-4 items-end">
+                        <div class="text-center">
+                            <label class="block text-xs text-[#575757] mb-2">Primary</label>
+                            <input type="color" name="color_primary" value="#202020" class="w-12 h-12 rounded-lg cursor-pointer color-swatch">
+                        </div>
+                        <div class="text-center">
+                            <label class="block text-xs text-[#575757] mb-2">Secondary</label>
+                            <input type="color" name="color_secondary" value="#C9A84C" class="w-12 h-12 rounded-lg cursor-pointer color-swatch">
+                        </div>
+                        <div class="text-center">
+                            <label class="block text-xs text-[#575757] mb-2">Accent</label>
+                            <input type="color" name="color_accent" value="#EEEAEA" class="w-12 h-12 rounded-lg cursor-pointer color-swatch">
+                        </div>
+                        <div class="text-center">
+                            <label class="block text-xs text-[#575757] mb-2">Background</label>
+                            <input type="color" name="color_bg" value="#FFFFFF" class="w-12 h-12 rounded-lg cursor-pointer color-swatch">
+                        </div>
+                        <button type="button" id="add-color-btn" class="w-12 h-12 rounded-lg border-2 border-dashed border-[#D5D1D1] flex items-center justify-center text-[#B4B4B4] hover:border-[#575757] hover:text-[#575757] transition-colors mb-0" title="Add colour">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Fonts -->
+                <div>
+                    <label class="block text-sm font-semibold text-[#202020] mb-2">Fonts / Typography</label>
+                    <p class="text-xs text-[#575757] mb-3">List any fonts you currently use or would like to use on the website.</p>
+                    <textarea name="fonts" rows="3" placeholder="e.g. Headings: Playfair Display, Body: Lato, Accent: Cormorant Garamond..." class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors resize-none"></textarea>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Website Inspiration -->
+        <section class="mb-10 section-card" data-section="4">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-8 h-8 rounded-full bg-[#202020] text-white text-sm font-bold flex items-center justify-center shrink-0">3</span>
+                <h2 class="text-xl font-bold text-[#202020]">Website Inspiration</h2>
+            </div>
+            <div class="bg-white rounded-xl border border-[#D5D1D1] p-6">
+                <p class="text-sm text-[#575757] mb-6">Share websites you admire &mdash; they don't have to be in the watch industry. Focus on design, layout, or user experience elements you like.</p>
+
+                <div id="inspiration-list" class="space-y-4 mb-6">
+                    <div class="inspiration-item border border-[#D5D1D1] rounded-lg p-4">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="w-6 h-6 rounded-full bg-[#EEEAEA] text-[#575757] text-xs font-bold flex items-center justify-center shrink-0">1</span>
+                            <input type="url" name="inspiration_url_1" placeholder="https://example.com" class="flex-1 p-2 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                        </div>
+                        <textarea name="inspiration_notes_1" rows="2" placeholder="What do you like about this site? (e.g. clean layout, product presentation, checkout flow...)" class="w-full p-2 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors resize-none"></textarea>
+                    </div>
+                </div>
+                <button type="button" id="add-inspiration-btn" class="text-sm text-[#575757] hover:text-[#202020] flex items-center gap-2 transition-colors">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    Add another website (up to 5)
+                </button>
+
+                <hr class="border-[#EEEAEA] my-6">
+
+                <div>
+                    <label class="block text-sm font-semibold text-[#202020] mb-2">Competitors to Differentiate From</label>
+                    <p class="text-xs text-[#575757] mb-3">List any direct competitors whose websites you want yours to stand apart from.</p>
+                    <textarea name="competitors" rows="3" placeholder="e.g. watchesworld.com - feels too cluttered, officialwatches.com - similar market but dated design..." class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors resize-none"></textarea>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Content & Imagery -->
+        <section class="mb-10 section-card" data-section="5">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-8 h-8 rounded-full bg-[#202020] text-white text-sm font-bold flex items-center justify-center shrink-0">4</span>
+                <h2 class="text-xl font-bold text-[#202020]">Content &amp; Imagery</h2>
+            </div>
+            <div class="bg-white rounded-xl border border-[#D5D1D1] p-6">
+                <p class="text-sm text-[#575757] mb-6">High-quality imagery is crucial for a luxury brand. Let me know what you have and what you'll need.</p>
+
+                <!-- Product Photography -->
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-[#202020] mb-2">Product Photography</label>
+                    <p class="text-xs text-[#575757] mb-3">Share a link to a folder with your product photos (Google Drive, Dropbox, WeTransfer, etc). Ideally 2000px+ for high-res.</p>
+                    <input type="url" name="product_photos_link" placeholder="Google Drive, Dropbox, or WeTransfer link..." class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                </div>
+
+                <!-- Lifestyle / Hero Imagery -->
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-[#202020] mb-2">Lifestyle &amp; Hero Imagery</label>
+                    <p class="text-xs text-[#575757] mb-3">Share a link to any lifestyle shots, banner images, or aspirational imagery that captures your brand's feel.</p>
+                    <input type="url" name="lifestyle_link" placeholder="Google Drive, Dropbox, or WeTransfer link..." class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                </div>
+
+                <!-- About / Copy -->
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-[#202020] mb-2">About Your Business</label>
+                    <p class="text-xs text-[#575757] mb-3">Write a few paragraphs about EightLuxuries for the "About" page. If you have existing copy, paste it here.</p>
+                    <textarea name="about_copy" rows="5" placeholder="Our story, mission, what sets us apart..." class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors resize-none"></textarea>
+                </div>
+
+                <!-- Existing Content -->
+                <div>
+                    <label class="block text-sm font-semibold text-[#202020] mb-2">Existing Content to Migrate</label>
+                    <p class="text-xs text-[#575757] mb-3">Do you have an existing website or content that needs to be carried over?</p>
+                    <textarea name="existing_content" rows="3" placeholder="e.g. Current site at eightluxuries.co.uk - keep product descriptions and blog posts, update everything else..." class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors resize-none"></textarea>
+                </div>
+
+                <div class="mt-4 bg-[#EEEAEA] rounded-lg p-4">
+                    <p class="text-xs text-[#575757] flex items-start gap-2">
+                        <svg class="shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 24 24" fill="#575757"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        For the best results, provide images at 2000px width or above. Low-resolution images will appear blurry on high-density displays.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Technical Requirements -->
+        <section class="mb-10 section-card" data-section="6">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-8 h-8 rounded-full bg-[#202020] text-white text-sm font-bold flex items-center justify-center shrink-0">5</span>
+                <h2 class="text-xl font-bold text-[#202020]">Technical Requirements</h2>
+            </div>
+            <div class="bg-white rounded-xl border border-[#D5D1D1] p-6">
+                <p class="text-sm text-[#575757] mb-6">The practical bits &mdash; domain, hosting, and integrations.</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                    <div>
+                        <label class="block text-sm font-semibold text-[#202020] mb-2">Domain Name</label>
+                        <input type="text" name="domain" placeholder="e.g. eightluxuries.com" class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                        <p class="text-xs text-[#B4B4B4] mt-1">Leave blank if you haven't purchased one yet</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-[#202020] mb-2">Domain Registrar</label>
+                        <input type="text" name="registrar" placeholder="e.g. GoDaddy, Namecheap, Google Domains" class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                    <div>
+                        <label class="block text-sm font-semibold text-[#202020] mb-2">Current Hosting</label>
+                        <input type="text" name="hosting" placeholder="e.g. Shopify, self-hosted, none" class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-[#202020] mb-2">Email Provider</label>
+                        <input type="text" name="email_provider" placeholder="e.g. Gmail, Outlook, custom domain email" class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <label class="block text-sm font-semibold text-[#202020] mb-3">Required Integrations</label>
+                    <p class="text-xs text-[#575757] mb-3">Select all that apply, or add your own below.</p>
+                    <div class="flex flex-wrap gap-2" id="integrations-list">
+                        <label class="priority-tag px-3 py-2 border border-[#D5D1D1] rounded-lg text-sm text-[#575757] cursor-pointer hover:border-[#202020] transition-colors">
+                            <input type="checkbox" name="integrations" value="Stripe" class="hidden"> Stripe
+                        </label>
+                        <label class="priority-tag px-3 py-2 border border-[#D5D1D1] rounded-lg text-sm text-[#575757] cursor-pointer hover:border-[#202020] transition-colors">
+                            <input type="checkbox" name="integrations" value="PayPal" class="hidden"> PayPal
+                        </label>
+                        <label class="priority-tag px-3 py-2 border border-[#D5D1D1] rounded-lg text-sm text-[#575757] cursor-pointer hover:border-[#202020] transition-colors">
+                            <input type="checkbox" name="integrations" value="Klarna" class="hidden"> Klarna
+                        </label>
+                        <label class="priority-tag px-3 py-2 border border-[#D5D1D1] rounded-lg text-sm text-[#575757] cursor-pointer hover:border-[#202020] transition-colors">
+                            <input type="checkbox" name="integrations" value="Royal Mail" class="hidden"> Royal Mail
+                        </label>
+                        <label class="priority-tag px-3 py-2 border border-[#D5D1D1] rounded-lg text-sm text-[#575757] cursor-pointer hover:border-[#202020] transition-colors">
+                            <input type="checkbox" name="integrations" value="DPD" class="hidden"> DPD
+                        </label>
+                        <label class="priority-tag px-3 py-2 border border-[#D5D1D1] rounded-lg text-sm text-[#575757] cursor-pointer hover:border-[#202020] transition-colors">
+                            <input type="checkbox" name="integrations" value="Mailchimp" class="hidden"> Mailchimp
+                        </label>
+                        <label class="priority-tag px-3 py-2 border border-[#D5D1D1] rounded-lg text-sm text-[#575757] cursor-pointer hover:border-[#202020] transition-colors">
+                            <input type="checkbox" name="integrations" value="Klaviyo" class="hidden"> Klaviyo
+                        </label>
+                        <label class="priority-tag px-3 py-2 border border-[#D5D1D1] rounded-lg text-sm text-[#575757] cursor-pointer hover:border-[#202020] transition-colors">
+                            <input type="checkbox" name="integrations" value="Google Analytics" class="hidden"> Google Analytics
+                        </label>
+                        <label class="priority-tag px-3 py-2 border border-[#D5D1D1] rounded-lg text-sm text-[#575757] cursor-pointer hover:border-[#202020] transition-colors">
+                            <input type="checkbox" name="integrations" value="Facebook Pixel" class="hidden"> Facebook Pixel
+                        </label>
+                        <label class="priority-tag px-3 py-2 border border-[#D5D1D1] rounded-lg text-sm text-[#575757] cursor-pointer hover:border-[#202020] transition-colors">
+                            <input type="checkbox" name="integrations" value="Live Chat" class="hidden"> Live Chat
+                        </label>
+                    </div>
+                    <input type="text" name="other_integrations" placeholder="Other integrations not listed above..." class="w-full mt-3 p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <label class="block text-sm font-semibold text-[#202020] mb-3">Social Media Links</label>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <span class="text-sm text-[#575757] w-24 shrink-0">Instagram</span>
+                            <input type="url" name="social_instagram" placeholder="https://instagram.com/eightluxuries" class="flex-1 p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-sm text-[#575757] w-24 shrink-0">Facebook</span>
+                            <input type="url" name="social_facebook" placeholder="https://facebook.com/eightluxuries" class="flex-1 p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-sm text-[#575757] w-24 shrink-0">TikTok</span>
+                            <input type="url" name="social_tiktok" placeholder="https://tiktok.com/@eightluxuries" class="flex-1 p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-sm text-[#575757] w-24 shrink-0">X / Twitter</span>
+                            <input type="url" name="social_twitter" placeholder="https://x.com/eightluxuries" class="flex-1 p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-sm text-[#575757] w-24 shrink-0">YouTube</span>
+                            <input type="url" name="social_youtube" placeholder="https://youtube.com/@eightluxuries" class="flex-1 p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Design Preferences -->
+        <section class="mb-10 section-card" data-section="7">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-8 h-8 rounded-full bg-[#202020] text-white text-sm font-bold flex items-center justify-center shrink-0">6</span>
+                <h2 class="text-xl font-bold text-[#202020]">Design Preferences</h2>
+            </div>
+            <div class="bg-white rounded-xl border border-[#D5D1D1] p-6">
+                <p class="text-sm text-[#575757] mb-6">Let's nail the feel of the website. These choices help me understand your aesthetic taste.</p>
+
+                <!-- Style Direction -->
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-[#202020] mb-3">Style Direction</label>
+                    <p class="text-xs text-[#575757] mb-3">Select the style that best describes your ideal website.</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        <label class="style-option cursor-pointer">
+                            <input type="radio" name="style_direction" value="Minimal & Clean" class="hidden">
+                            <div class="border-2 border-[#D5D1D1] rounded-lg p-4 text-center hover:border-[#202020] transition-colors">
+                                <p class="text-2xl mb-2">&#9723;</p>
+                                <p class="text-sm font-semibold text-[#202020]">Minimal</p>
+                                <p class="text-xs text-[#B4B4B4]">Clean &amp; refined</p>
+                            </div>
+                        </label>
+                        <label class="style-option cursor-pointer">
+                            <input type="radio" name="style_direction" value="Bold & Luxurious" class="hidden">
+                            <div class="border-2 border-[#D5D1D1] rounded-lg p-4 text-center hover:border-[#202020] transition-colors">
+                                <p class="text-2xl mb-2">&#9733;</p>
+                                <p class="text-sm font-semibold text-[#202020]">Bold</p>
+                                <p class="text-xs text-[#B4B4B4]">Luxurious &amp; striking</p>
+                            </div>
+                        </label>
+                        <label class="style-option cursor-pointer">
+                            <input type="radio" name="style_direction" value="Editorial & Magazine" class="hidden">
+                            <div class="border-2 border-[#D5D1D1] rounded-lg p-4 text-center hover:border-[#202020] transition-colors">
+                                <p class="text-2xl mb-2">&#9776;</p>
+                                <p class="text-sm font-semibold text-[#202020]">Editorial</p>
+                                <p class="text-xs text-[#B4B4B4]">Magazine-style</p>
+                            </div>
+                        </label>
+                        <label class="style-option cursor-pointer">
+                            <input type="radio" name="style_direction" value="Classic & Traditional" class="hidden">
+                            <div class="border-2 border-[#D5D1D1] rounded-lg p-4 text-center hover:border-[#202020] transition-colors">
+                                <p class="text-2xl mb-2">&#9878;</p>
+                                <p class="text-sm font-semibold text-[#202020]">Classic</p>
+                                <p class="text-xs text-[#B4B4B4]">Traditional &amp; timeless</p>
+                            </div>
+                        </label>
+                        <label class="style-option cursor-pointer">
+                            <input type="radio" name="style_direction" value="Dark & Moody" class="hidden">
+                            <div class="border-2 border-[#D5D1D1] rounded-lg p-4 text-center hover:border-[#202020] transition-colors">
+                                <p class="text-2xl mb-2">&#9790;</p>
+                                <p class="text-sm font-semibold text-[#202020]">Dark</p>
+                                <p class="text-xs text-[#B4B4B4]">Moody &amp; dramatic</p>
+                            </div>
+                        </label>
+                        <label class="style-option cursor-pointer">
+                            <input type="radio" name="style_direction" value="Modern & Techy" class="hidden">
+                            <div class="border-2 border-[#D5D1D1] rounded-lg p-4 text-center hover:border-[#202020] transition-colors">
+                                <p class="text-2xl mb-2">&#9672;</p>
+                                <p class="text-sm font-semibold text-[#202020]">Modern</p>
+                                <p class="text-xs text-[#B4B4B4]">Techy &amp; forward</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Tone of Voice -->
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-[#202020] mb-2">Tone of Voice</label>
+                    <p class="text-xs text-[#575757] mb-3">How should your brand speak to customers?</p>
+                    <textarea name="tone_of_voice" rows="3" placeholder="e.g. Professional but approachable, confident without being arrogant. We want customers to feel they're dealing with experts who genuinely care..." class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors resize-none"></textarea>
+                </div>
+
+                <!-- Must-haves -->
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-[#202020] mb-2">Must-Have Features</label>
+                    <p class="text-xs text-[#575757] mb-3">What features are non-negotiable for launch?</p>
+                    <textarea name="must_haves" rows="3" placeholder="e.g. Trust badges, customer reviews, watch comparison tool, authentication verification, finance options..." class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors resize-none"></textarea>
+                </div>
+
+                <!-- Don't wants -->
+                <div>
+                    <label class="block text-sm font-semibold text-[#202020] mb-2">Things to Avoid</label>
+                    <p class="text-xs text-[#575757] mb-3">Anything you definitely don't want on the website?</p>
+                    <textarea name="avoid" rows="3" placeholder="e.g. No pop-ups, no auto-playing videos, no cluttered layouts, no stock photography..." class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors resize-none"></textarea>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Timeline & Priorities -->
+        <section class="mb-10 section-card" data-section="8">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-8 h-8 rounded-full bg-[#202020] text-white text-sm font-bold flex items-center justify-center shrink-0">7</span>
+                <h2 class="text-xl font-bold text-[#202020]">Timeline &amp; Priorities</h2>
+            </div>
+            <div class="bg-white rounded-xl border border-[#D5D1D1] p-6">
+                <p class="text-sm text-[#575757] mb-6">Help me plan the build around your schedule and priorities.</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                    <div>
+                        <label class="block text-sm font-semibold text-[#202020] mb-2">Preferred Launch Date</label>
+                        <input type="date" name="launch_date" class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-[#202020] mb-2">Is This Date Flexible?</label>
+                        <div class="flex gap-3 mt-1">
+                            <label class="flex items-center gap-2 p-3 border-2 border-[#D5D1D1] rounded-lg cursor-pointer hover:border-[#202020] transition-colors">
+                                <input type="radio" name="date_flexible" value="yes" class="w-4 h-4 accent-[#202020]">
+                                <span class="text-sm text-[#202020]">Yes</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-3 border-2 border-[#D5D1D1] rounded-lg cursor-pointer hover:border-[#202020] transition-colors">
+                                <input type="radio" name="date_flexible" value="no" class="w-4 h-4 accent-[#202020]">
+                                <span class="text-sm text-[#202020]">No, hard deadline</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <label class="block text-sm font-semibold text-[#202020] mb-2">Hard Deadlines or Events</label>
+                    <textarea name="deadlines" rows="2" placeholder="e.g. Trade show on 15th April, holiday campaign starting December 1st..." class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors resize-none"></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-sm font-semibold text-[#202020] mb-2">Priority for Launch</label>
+                        <p class="text-xs text-[#575757] mb-3">What must be ready on day one?</p>
+                        <textarea name="launch_priorities" rows="4" placeholder="e.g.&#10;- Full product catalogue&#10;- Secure checkout&#10;- Mobile-optimised&#10;- Basic SEO setup" class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors resize-none"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-[#202020] mb-2">Post-Launch / Phase 2</label>
+                        <p class="text-xs text-[#575757] mb-3">Nice-to-haves that can come later.</p>
+                        <textarea name="post_launch" rows="4" placeholder="e.g.&#10;- Blog section&#10;- Customer accounts&#10;- Loyalty programme&#10;- Multi-currency support" class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors resize-none"></textarea>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Additional Notes -->
+        <section class="mb-10 section-card" data-section="9">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-8 h-8 rounded-full bg-[#202020] text-white text-sm font-bold flex items-center justify-center shrink-0">8</span>
+                <h2 class="text-xl font-bold text-[#202020]">Additional Notes</h2>
+            </div>
+            <div class="bg-white rounded-xl border border-[#D5D1D1] p-6">
+                <p class="text-sm text-[#575757] mb-4">Anything else you'd like me to know? No detail is too small.</p>
+                <textarea name="additional_notes" rows="6" placeholder="Any other thoughts, concerns, questions, or ideas you'd like to share..." class="w-full p-3 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors resize-none"></textarea>
+            </div>
+        </section>
+
+        <!-- Submit -->
+        <section class="mb-10" id="submit-section">
+            <div class="bg-[#202020] rounded-xl p-8 text-center">
+                <h2 class="text-xl font-bold text-white mb-3">Ready to Submit?</h2>
+                <p class="text-sm text-white/60 mb-6 max-w-md mx-auto">Once submitted, I'll review everything and be in touch within 24 hours to confirm the next steps and kick off the project.</p>
+                <button type="submit" id="submit-btn" class="inline-flex hover:scale-95 duration-200 justify-center text-[#202020] font-bold items-center bg-white rounded-full px-10 h-[3rem] gap-3 mx-auto">
+                    Submit Onboarding
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.92 11.62C17.8724 11.4973 17.801 11.3851 17.71 11.29L12.71 6.29C12.6168 6.19676 12.5061 6.1228 12.3842 6.07234C12.2624 6.02188 12.1319 5.99591 12 5.99591C11.7337 5.99591 11.4783 6.1017 11.29 6.29C11.1968 6.38324 11.1228 6.49393 11.0723 6.61575C11.0219 6.73758 10.9959 6.86814 10.9959 7C10.9959 7.2663 11.1017 7.5217 11.29 7.71L14.59 11H7C6.73478 11 6.48043 11.1054 6.29289 11.2929C6.10536 11.4804 6 11.7348 6 12C6 12.2652 6.10536 12.5196 6.29289 12.7071C6.48043 12.8946 6.73478 13 7 13H14.59L11.29 16.29C11.1963 16.383 11.1219 16.4936 11.0711 16.6154C11.0203 16.7373 10.9942 16.868 10.9942 17C10.9942 17.132 11.0203 17.2627 11.0711 17.3846C11.1219 17.5064 11.1963 17.617 11.29 17.71C11.383 17.8037 11.4936 17.8781 11.6154 17.9289C11.7373 17.9797 11.868 18.0058 12 18.0058C12.132 18.0058 12.2627 17.9797 12.3846 17.9289C12.5064 17.8781 12.617 17.8037 12.71 17.71L17.71 12.71C17.801 12.6149 17.8724 12.5028 17.92 12.38C18.02 12.1365 18.02 11.8635 17.92 11.62Z" fill="#202020"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Success Confirmation (hidden) -->
+        <section class="mb-10 hidden" id="success-section">
+            <div class="bg-[#D3F3E6] rounded-xl border border-[#368468] p-8 text-center">
+                <svg class="mx-auto mb-4" width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2ZM16.78 9.7L11.11 15.37C10.97 15.51 10.78 15.59 10.58 15.59C10.38 15.59 10.19 15.51 10.05 15.37L7.22 12.54C6.93 12.25 6.93 11.77 7.22 11.48C7.51 11.19 7.99 11.19 8.28 11.48L10.58 13.78L15.72 8.64C16.01 8.35 16.49 8.35 16.78 8.64C17.07 8.93 17.07 9.4 16.78 9.7Z" fill="#368468"/>
+                </svg>
+                <h3 class="text-2xl font-bold text-[#202020] mb-3">Onboarding Submitted</h3>
+                <p class="text-sm text-[#575757] mb-1">Thank you for completing the onboarding form.</p>
+                <p class="text-sm text-[#575757]">I'll review your responses and be in touch within <strong>24 hours</strong> to confirm next steps.</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-[#D5D1D1] pt-6 pb-10 text-center">
+            <p class="text-sm text-[#575757]">Jeff Nicholls &middot; Freelance Software Engineer</p>
+        </footer>
+
+    </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+    (function() {
+        emailjs.init('-N-3aakQbTLggw5jD');
+
+        // ── Progress tracking ──
+        var sectionLabels = {
+            1: 'Welcome',
+            2: 'Business Information',
+            3: 'Brand Identity',
+            4: 'Website Inspiration',
+            5: 'Content & Imagery',
+            6: 'Technical Requirements',
+            7: 'Design Preferences',
+            8: 'Timeline & Priorities'
+        };
+
+        function updateProgress() {
+            var sections = document.querySelectorAll('.section-card');
+            var scrollTop = window.scrollY + 160;
+            var currentSection = 1;
+
+            sections.forEach(function(section) {
+                if (section.offsetTop <= scrollTop) {
+                    currentSection = parseInt(section.dataset.section);
+                }
+            });
+
+            var steps = document.querySelectorAll('.progress-step');
+            steps.forEach(function(step) {
+                var stepNum = parseInt(step.dataset.step);
+                step.classList.remove('active', 'completed');
+                if (stepNum < currentSection) {
+                    step.classList.add('completed');
+                } else if (stepNum === currentSection) {
+                    step.classList.add('active');
+                }
+            });
+
+            var label = document.getElementById('progress-label');
+            label.innerHTML = 'Section ' + currentSection + ' of 8 &mdash; ' + (sectionLabels[currentSection] || 'Additional Notes');
+        }
+
+        window.addEventListener('scroll', updateProgress);
+        updateProgress();
+
+        // ── Inspiration: add more ──
+        var inspirationCount = 1;
+        document.getElementById('add-inspiration-btn').addEventListener('click', function() {
+            if (inspirationCount >= 5) return;
+            inspirationCount++;
+            var list = document.getElementById('inspiration-list');
+            var item = document.createElement('div');
+            item.className = 'inspiration-item border border-[#D5D1D1] rounded-lg p-4 section-card';
+            item.innerHTML = '<div class="flex items-center gap-2 mb-3"><span class="w-6 h-6 rounded-full bg-[#EEEAEA] text-[#575757] text-xs font-bold flex items-center justify-center shrink-0">' + inspirationCount + '</span><input type="url" name="inspiration_url_' + inspirationCount + '" placeholder="https://example.com" class="flex-1 p-2 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors"><button type="button" class="text-[#B4B4B4] hover:text-red-400 transition-colors shrink-0" onclick="this.closest(\'.inspiration-item\').remove()"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg></button></div><textarea name="inspiration_notes_' + inspirationCount + '" rows="2" placeholder="What do you like about this site?" class="w-full p-2 border-2 border-[#D5D1D1] rounded-lg bg-[#EEEAEA] text-[#202020] text-sm focus:outline-none focus:border-[#202020] transition-colors resize-none"></textarea>';
+            list.appendChild(item);
+            if (inspirationCount >= 5) {
+                document.getElementById('add-inspiration-btn').style.display = 'none';
+            }
+        });
+
+        // ── Integration tags ──
+        document.querySelectorAll('.priority-tag').forEach(function(tag) {
+            tag.addEventListener('click', function() {
+                var checkbox = tag.querySelector('input[type="checkbox"]');
+                if (checkbox) {
+                    tag.classList.toggle('selected', checkbox.checked);
+                }
+            });
+            var checkbox = tag.querySelector('input[type="checkbox"]');
+            if (checkbox) {
+                checkbox.addEventListener('change', function() {
+                    tag.classList.toggle('selected', checkbox.checked);
+                });
+            }
+        });
+
+        // ── Add colour swatch ──
+        var colorCount = 4;
+        document.getElementById('add-color-btn').addEventListener('click', function() {
+            colorCount++;
+            var btn = document.getElementById('add-color-btn');
+            var wrapper = document.createElement('div');
+            wrapper.className = 'text-center';
+            wrapper.innerHTML = '<label class="block text-xs text-[#575757] mb-2">Extra ' + (colorCount - 4) + '</label><input type="color" name="color_extra_' + (colorCount - 4) + '" value="#888888" class="w-12 h-12 rounded-lg cursor-pointer color-swatch">';
+            btn.parentNode.insertBefore(wrapper, btn);
+        });
+
+        // ── Form Submission ──
+        document.getElementById('onboarding-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Basic validation
+            var required = document.querySelectorAll('[required]');
+            var valid = true;
+            required.forEach(function(field) {
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#ef4444';
+                    field.addEventListener('input', function() {
+                        field.style.borderColor = '';
+                    }, { once: true });
+                    valid = false;
+                }
+            });
+
+            if (!valid) {
+                var firstInvalid = document.querySelector('[required]:invalid, [style*="border-color: rgb(239, 68, 68)"]');
+                if (firstInvalid) {
+                    firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                return;
+            }
+
+            var btn = document.getElementById('submit-btn');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="inline-block w-5 h-5 border-2 border-[#202020] border-t-transparent rounded-full animate-spin"></span> Submitting...';
+
+            // Gather form data
+            var formData = new FormData(document.getElementById('onboarding-form'));
+            var data = {};
+            formData.forEach(function(value, key) {
+                if (data[key]) {
+                    if (Array.isArray(data[key])) {
+                        data[key].push(value);
+                    } else {
+                        data[key] = [data[key], value];
+                    }
+                } else {
+                    data[key] = value;
+                }
+            });
+
+            // Format for email
+            var messageBody = 'EIGHTLUXURIES ONBOARDING\n';
+            messageBody += '========================\n\n';
+
+            messageBody += 'BUSINESS INFORMATION\n';
+            messageBody += 'Business: ' + (data.business_name || '') + '\n';
+            messageBody += 'Contact: ' + (data.contact_name || '') + '\n';
+            messageBody += 'Email: ' + (data.email || '') + '\n';
+            messageBody += 'Phone: ' + (data.phone || '') + '\n';
+            messageBody += 'Address: ' + (data.address || '') + '\n';
+            messageBody += 'Description: ' + (data.business_description || '') + '\n\n';
+
+            messageBody += 'BRAND IDENTITY\n';
+            messageBody += 'Has Branding: ' + (data.has_branding || 'Not specified') + '\n';
+            messageBody += 'Logos Link: ' + (data.logos_link || '') + '\n';
+            messageBody += 'Guidelines Link: ' + (data.guidelines_link || '') + '\n';
+            messageBody += 'Primary Colour: ' + (data.color_primary || '') + '\n';
+            messageBody += 'Secondary Colour: ' + (data.color_secondary || '') + '\n';
+            messageBody += 'Accent Colour: ' + (data.color_accent || '') + '\n';
+            messageBody += 'Background Colour: ' + (data.color_bg || '') + '\n';
+            messageBody += 'Fonts: ' + (data.fonts || '') + '\n\n';
+
+            messageBody += 'WEBSITE INSPIRATION\n';
+            for (var i = 1; i <= 5; i++) {
+                if (data['inspiration_url_' + i]) {
+                    messageBody += i + '. ' + data['inspiration_url_' + i] + '\n';
+                    messageBody += '   Notes: ' + (data['inspiration_notes_' + i] || '') + '\n';
+                }
+            }
+            messageBody += 'Competitors: ' + (data.competitors || '') + '\n\n';
+
+            messageBody += 'CONTENT & IMAGERY\n';
+            messageBody += 'Product Photos Link: ' + (data.product_photos_link || '') + '\n';
+            messageBody += 'Lifestyle Imagery Link: ' + (data.lifestyle_link || '') + '\n';
+            messageBody += 'About Copy: ' + (data.about_copy || '') + '\n';
+            messageBody += 'Existing Content: ' + (data.existing_content || '') + '\n\n';
+
+            messageBody += 'TECHNICAL REQUIREMENTS\n';
+            messageBody += 'Domain: ' + (data.domain || '') + '\n';
+            messageBody += 'Registrar: ' + (data.registrar || '') + '\n';
+            messageBody += 'Hosting: ' + (data.hosting || '') + '\n';
+            messageBody += 'Email Provider: ' + (data.email_provider || '') + '\n';
+            var integrations = Array.isArray(data.integrations) ? data.integrations.join(', ') : (data.integrations || '');
+            messageBody += 'Integrations: ' + integrations + '\n';
+            messageBody += 'Other Integrations: ' + (data.other_integrations || '') + '\n';
+            messageBody += 'Instagram: ' + (data.social_instagram || '') + '\n';
+            messageBody += 'Facebook: ' + (data.social_facebook || '') + '\n';
+            messageBody += 'TikTok: ' + (data.social_tiktok || '') + '\n';
+            messageBody += 'X/Twitter: ' + (data.social_twitter || '') + '\n';
+            messageBody += 'YouTube: ' + (data.social_youtube || '') + '\n\n';
+
+            messageBody += 'DESIGN PREFERENCES\n';
+            messageBody += 'Style: ' + (data.style_direction || '') + '\n';
+            messageBody += 'Tone: ' + (data.tone_of_voice || '') + '\n';
+            messageBody += 'Must-Haves: ' + (data.must_haves || '') + '\n';
+            messageBody += 'Avoid: ' + (data.avoid || '') + '\n\n';
+
+            messageBody += 'TIMELINE & PRIORITIES\n';
+            messageBody += 'Launch Date: ' + (data.launch_date || '') + '\n';
+            messageBody += 'Flexible: ' + (data.date_flexible || '') + '\n';
+            messageBody += 'Deadlines: ' + (data.deadlines || '') + '\n';
+            messageBody += 'Launch Priorities: ' + (data.launch_priorities || '') + '\n';
+            messageBody += 'Post-Launch: ' + (data.post_launch || '') + '\n\n';
+
+            messageBody += 'ADDITIONAL NOTES\n';
+            messageBody += (data.additional_notes || 'None') + '\n';
+
+            emailjs.send(
+                'service_3qbsml6',
+                'template_yuzduu3',
+                {
+                    client_name: data.contact_name || 'EightLuxuries',
+                    package: 'Client Onboarding Submission',
+                    date: new Date().toLocaleDateString('en-GB'),
+                    proposal: 'EightLuxuries',
+                    message: messageBody
+                }
+            ).then(function() {
+                showSuccess();
+            }, function(error) {
+                console.error('EmailJS error:', error);
+                showSuccess();
+            });
+        });
+
+        function showSuccess() {
+            document.getElementById('submit-section').classList.add('hidden');
+            document.getElementById('success-section').classList.remove('hidden');
+            document.getElementById('success-section').scrollIntoView({ behavior: 'smooth' });
+
+            // Hide the progress bar
+            document.getElementById('progress-bar').parentElement.parentElement.style.display = 'none';
+        }
+
+    })();
+    </script>
+</body>
+</html>
